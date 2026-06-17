@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>30秒 バックオフィス課題診断｜Grace Rin</title>
+<meta name="description" content="3つの質問に答えるだけで、今のバックオフィス課題と最初に整えるべき業務、合う支援プランの目安がわかります。Grace Rin バックオフィス内製化サポート。">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="30秒 バックオフィス課題診断｜Grace Rin">
+<meta property="og:description" content="3つの質問に答えるだけで、今のバックオフィス課題と最初に整えるべき業務が見えてきます。">
+<style>
+  :root{--ivory:#f6f1e7;--ivory-2:#efe8da;--ivory-3:#e8e0cf;--paper:#ffffff;--sage:#a9b8a0;--sage-2:#8fa286;--sage-ink:#5e6e57;--sage-deep:#44503d;--olive:#6f7d61;--olive-d:#5c6850;--gold:#c9a44a;--gold-soft:#d9be7e;--gold-pale:#e7d6ab;--tan:#c2a566;--ink:#4a463f;--ink-soft:#857e70;--line:#e6dece}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Sans","Yu Gothic",-apple-system,BlinkMacSystemFont,sans-serif;background:var(--ivory);color:var(--ink);line-height:1.95;font-size:15px;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+  .serif{font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Yu Gothic",sans-serif;font-feature-settings:"palt"}
+  .script{font-family:"Snell Roundhand","Apple Chancery",cursive;font-style:italic}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 36px;position:relative;z-index:1}
+  section{padding:78px 0;position:relative}
+  .paper{background:var(--paper)}
+  .sec-head{text-align:center;margin-bottom:46px}
+  .sec-head .en{display:inline-block;font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Yu Gothic",sans-serif;font-style:normal;text-transform:uppercase;border:1px solid var(--sage);color:var(--sage-ink);font-size:11px;letter-spacing:.18em;padding:7px 18px;border-radius:999px;margin-bottom:18px;font-weight:600}
+  .sec-head h2{font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Yu Gothic",sans-serif;font-weight:500;font-size:27px;letter-spacing:.08em;color:var(--ink);line-height:1.6}
+  .sec-head p{color:var(--ink-soft);font-size:14px;margin-top:14px;letter-spacing:.04em}
+  /* ヘッダー */
+  .topbar{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:36px;padding-top:18px;padding-bottom:18px}
+  .logo{display:flex;align-items:center;gap:12px}
+  .brandmain{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;font-size:18px;font-weight:600;letter-spacing:.08em;color:var(--ink);line-height:1.3;white-space:nowrap}
+  .brandsub{font-size:12px;font-weight:600;letter-spacing:.22em;color:var(--gold);margin-top:4px;white-space:nowrap}
+  .nav a{font-size:12.5px;color:var(--ink);text-decoration:none;letter-spacing:.04em;transition:.18s;white-space:nowrap;padding:9px 15px;border-radius:9px}
+  .nav a:hover{background:var(--ivory-2);color:var(--sage-ink)}
+  .btn{display:inline-flex;align-items:center;gap:12px;background:var(--olive);color:#fff;text-decoration:none;padding:16px 40px;border-radius:5px;font-size:15px;letter-spacing:.08em;transition:.2s}
+  .btn:hover{background:var(--olive-d);transform:translateY(-2px)}
+  /* 診断 */
+  #diagnosis{background:#eef2ea}
+  #diagnosis .sec-head .en{background:rgba(255,255,255,.65)}
+  .diag{max-width:720px;margin:0 auto}
+  .diag-form{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:34px 36px;box-shadow:0 12px 32px rgba(94,110,87,.12)}
+  .dq{margin-bottom:20px}
+  .dq label{display:block;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:.03em}
+  .dq label .qno{color:var(--gold);margin-right:7px}
+  .diag-form select{font-family:inherit;font-size:14px;color:var(--ink);background:var(--paper);width:100%;border:1px solid var(--line);border-radius:6px;padding:13px 38px 13px 14px;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none' stroke='%238fa286' stroke-width='1.5'><path d='M1 1l5 5 5-5'/></svg>");background-repeat:no-repeat;background-position:right 14px center;background-size:12px}
+  .diag-form select:focus{outline:none;border-color:var(--sage-2);box-shadow:0 0 0 3px rgba(143,162,134,.15)}
+  .diag-form select:invalid{color:var(--ink-soft)}
+  .diag-msg{font-size:12.5px;color:#b9694f;margin:4px 0 12px;min-height:1em}
+  #diagBtn{background:var(--olive);color:#fff;border:none;border-radius:6px;padding:16px 0;width:100%;font-size:15px;letter-spacing:.08em;cursor:pointer;transition:.2s;font-family:inherit;margin-top:6px}
+  #diagBtn:hover{background:var(--olive-d)}
+  .dcard-result{background:var(--paper);border:2px solid var(--sage-2);border-radius:12px;padding:34px 36px;margin-top:26px;box-shadow:0 16px 40px rgba(143,162,134,.2)}
+  .dr-label{display:inline-block;background:var(--sage-2);color:#fff;font-size:11px;padding:5px 13px;border-radius:999px;letter-spacing:.1em;margin-bottom:14px}
+  .dcard-result h3{font-size:21px;font-weight:700;color:var(--ink);letter-spacing:.03em;line-height:1.5;margin-bottom:14px}
+  .dcard-result h3 b{color:var(--sage-ink)}
+  .dcard-result h3 small{display:block;font-size:13px;font-weight:600;color:var(--gold);margin-top:4px;letter-spacing:.04em}
+  .dr-now{font-size:13.5px;color:var(--ink-soft);line-height:2;margin-bottom:22px}
+  .dr-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:26px}
+  .dr-ct{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:.08em;margin-bottom:11px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+  .dr-col ul{list-style:none}
+  .dr-col li{position:relative;padding:6px 0 6px 22px;font-size:12.5px;color:var(--ink);line-height:1.7}
+  .dr-col li::before{content:"";position:absolute;left:2px;top:11px;width:11px;height:6px;border-left:1.6px solid var(--sage-2);border-bottom:1.6px solid var(--sage-2);transform:rotate(-45deg)}
+  .dr-cta{display:inline-flex;align-items:center;justify-content:center}
+  .diag-note{text-align:center;font-size:12px;color:var(--ink-soft);margin-top:28px;line-height:1.9}
+  .diag-back{text-align:center;margin-top:36px}
+  .diag-back a{font-size:12.5px;color:var(--sage-ink);text-decoration:none;letter-spacing:.04em}
+  .diag-back a:hover{text-decoration:underline}
+  /* フッター */
+  footer{background:var(--paper);border-top:1px solid var(--line);padding:40px 0 30px;text-align:center}
+  .foot-nav{display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:center;margin-bottom:14px}
+  .foot-nav a{font-size:11.5px;color:var(--ink-soft);text-decoration:none;letter-spacing:.04em}
+  .foot-nav a:hover{color:var(--sage-ink)}
+  .copy{font-size:11px;color:var(--ink-soft);letter-spacing:.06em;opacity:.8}
+  @media(max-width:800px){
+    .topbar .wrap{padding-left:16px;padding-right:16px;gap:16px}
+    .brandmain{font-size:13px;letter-spacing:.02em}.brandsub{font-size:10px;letter-spacing:.14em}
+    .diag-form{padding:24px 20px}.dcard-result{padding:24px 20px}.dr-cols{grid-template-columns:1fr;gap:18px}
+    .sec-head h2{font-size:22px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="logo">
+      <div>
+        <div class="brandmain">バックオフィス内製化サポート</div>
+        <div class="brandsub">Grace&nbsp;Rin</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="./">← トップへ戻る</a>
+    </nav>
+  </div>
+</div>
+
+<!-- バックオフィス課題 簡易診断 -->
+<section class="paper" id="diagnosis">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en script">Quick check</span>
+      <h2 class="serif">30秒 バックオフィス課題診断</h2>
+      <p>3つの質問に答えるだけで、いまのバックオフィス課題と、<br>最初に整えるべき業務・合う支援プランの目安がわかります。</p>
+    </div>
+    <div class="diag">
+      <div class="diag-form">
+        <div class="dq">
+          <label><span class="qno">Q1.</span>今いちばん困っていることは？</label>
+          <select id="dq1">
+            <option value="" disabled selected>選択してください</option>
+            <option value="0">社長が事務・採用・請求まで抱えている</option>
+            <option value="1">担当者しかわからない業務が多い</option>
+            <option value="2">請求・勤怠・採用などで抜け漏れがある</option>
+            <option value="3">AIやツールを使いたいが、何から始めればいいかわからない</option>
+            <option value="4">採用や広報を整えたい</option>
+            <option value="5">士業とのやり取りや管理が煩雑</option>
+          </select>
+        </div>
+        <div class="dq">
+          <label><span class="qno">Q2.</span>今の体制は？</label>
+          <select id="dq2">
+            <option value="" disabled selected>選択してください</option>
+            <option value="0">社長ひとりで対応している</option>
+            <option value="1">兼任担当者がいる</option>
+            <option value="2">パート・業務委託に一部お願いしている</option>
+            <option value="3">社員に任せたいが仕組みがない</option>
+            <option value="4">すでに担当者はいるが属人化している</option>
+          </select>
+        </div>
+        <div class="dq">
+          <label><span class="qno">Q3.</span>求めるゴールは？</label>
+          <select id="dq3">
+            <option value="" disabled selected>選択してください</option>
+            <option value="0">まず課題を整理したい</option>
+            <option value="1">業務フローやマニュアルを作りたい</option>
+            <option value="2">実務も一緒に進めながら整えたい</option>
+            <option value="3">AIやツールで効率化したい</option>
+            <option value="4">将来的に社内メンバーへ引き継ぎたい</option>
+          </select>
+        </div>
+        <p class="diag-msg" id="diagMsg"></p>
+        <button type="button" id="diagBtn">診断する</button>
+      </div>
+
+      <div id="diagResult" hidden></div>
+
+      <p class="diag-note">診断結果はあくまで目安です。実際の業務量・体制・優先順位に合わせて、初回相談で最適な進め方をご提案します。</p>
+      <div class="diag-back"><a href="./">← Grace Rin トップへ戻る</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer>
+  <div class="wrap">
+    <nav class="foot-nav">
+      <a href="./">トップ</a>
+      <a href="./#price">料金プラン</a>
+      <a href="about.html">Grace Rinについて</a>
+      <a href="./#contact">お問い合わせ</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </nav>
+    <p class="copy">© Grace Rin All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('diagBtn'); if(!btn) return;
+  var plans={
+    p1:{title:'内製化ロードマップ作成', price:'月額20万円〜',
+      now:'今は、まず業務の全体像を見える化し、どこに抜け漏れ・重複・属人化があるかを整理するフェーズです。',
+      support:['業務棚卸し','課題整理','月次タスク表作成','簡易マニュアル作成','AI活用ポイントの提案'],
+      goal:['社長や担当者の頭の中にある業務が見える','優先して整えるべき業務がわかる','何を外注し、何を社内に残すべきか判断できる']},
+    p2:{title:'内製化スタンダード', price:'月額35万円〜',
+      now:'今は、属人化している業務を整理し、誰が見ても迷わず動ける運用に変えていくフェーズです。',
+      support:['業務フロー作成','運用ルール整備','チェックリスト作成','業務手順書・テンプレート作成','AI・ツール活用設計','月次改善ミーティング'],
+      goal:['担当者以外でも業務の流れがわかる','抜け漏れや確認待ちが減る','AIやツールを使った効率化が現場に定着する']},
+    p3:{title:'バックオフィス構築伴走', price:'月額50万円〜',
+      now:'今は、個別業務の整理だけでなく、会社全体のバックオフィス体制をつくっていくフェーズです。',
+      support:['業務設計','担当体制づくり','採用・労務・経理まわりの運用整備','士業連携','管理表・マニュアル・テンプレート整備','AI・ツールを活用した省力化設計'],
+      goal:['社長に業務が集中しにくくなる','社内で役割分担しながら業務が回る','採用・労務・経理などの管理体制が整う','将来的に社内メンバーへ引き継げる']}
+  };
+  var q1p=['p1','p2','p2','p2','p2','p3'];
+  var q2p=['p1','p2','p2','p3','p2'];
+  var q3p=['p1','p2','p2','p2','p3'];
+
+  function li(arr){return arr.map(function(t){return '<li>'+t+'</li>';}).join('');}
+
+  function render(key){
+    var pl=plans[key];
+    var html=''
+      +'<div class="dcard-result">'
+      +'<span class="dr-label">診断結果</span>'
+      +'<h3>あなたには <b>'+pl.title+'</b> がおすすめです<small>'+pl.price+'</small></h3>'
+      +'<p class="dr-now">'+pl.now+'</p>'
+      +'<div class="dr-cols">'
+      +'<div class="dr-col"><p class="dr-ct">おすすめ支援内容</p><ul class="dr-support">'+li(pl.support)+'</ul></div>'
+      +'<div class="dr-col"><p class="dr-ct">目指せる状態</p><ul class="dr-goal">'+li(pl.goal)+'</ul></div>'
+      +'</div>'
+      +'<p class="dr-now" style="margin-bottom:18px">この状態は、社長の時間が毎月かなり奪われている可能性があります。まずは30分で、どの業務から手放せるか整理できます。</p>'
+      +'<a class="btn dr-cta" href="./#contact">30分で、手放せる業務を相談する</a>'
+      +'</div>';
+    var box=document.getElementById('diagResult');
+    box.innerHTML=html; box.hidden=false;
+    box.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  btn.addEventListener('click',function(){
+    var a1=document.getElementById('dq1').value, a2=document.getElementById('dq2').value, a3=document.getElementById('dq3').value;
+    var msg=document.getElementById('diagMsg');
+    if(a1===''||a2===''||a3===''){ msg.textContent='3つすべてお選びください。'; return; }
+    msg.textContent='';
+    var s={p1:0,p2:0,p3:0};
+    s[q1p[a1]]+=1; s[q2p[a2]]+=1; s[q3p[a3]]+=2;
+    var win=q3p[a3];
+    ['p1','p2','p3'].forEach(function(p){ if(s[p]>s[win]) win=p; });
+    render(win);
+  });
+})();
+</script>
+
+</body>
+</html>

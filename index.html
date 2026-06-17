@@ -536,23 +536,31 @@
     padding:5px 12px;border-radius:7px;border:1px solid var(--line);box-shadow:0 6px 18px rgba(74,70,63,.14);
     opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;z-index:60}
   .nav a.nlink:hover .ja{opacity:1;transform:translateX(-50%) translateY(0)}
-  /* 診断バナー */
+  /* 診断バナー(別ページ誘導) */
   .db-wrap{padding:60px 0}
-  .diagbanner{max-width:1040px;margin:0 auto;position:relative;overflow:hidden;
-    background:linear-gradient(135deg,var(--sage-deep) 0%,var(--olive) 55%,var(--sage-2) 122%);
-    border-radius:16px;padding:44px 52px;display:flex;align-items:center;justify-content:space-between;gap:44px;
-    box-shadow:0 18px 44px rgba(68,80,61,.24)}
-  .diagbanner::before{content:"";position:absolute;right:-46px;top:-66px;width:240px;height:240px;border-radius:50%;background:rgba(217,190,126,.13);pointer-events:none}
-  .diagbanner::after{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--gold-soft);opacity:.85}
+  .diagbanner{max-width:1080px;margin:0 auto;position:relative;overflow:hidden;display:flex;align-items:center;gap:30px;text-decoration:none;
+    background:linear-gradient(135deg,#2f3a2b 0%,var(--sage-deep) 58%,#3a4733 120%);
+    border:1px solid rgba(217,190,126,.28);border-radius:18px;padding:38px 46px;
+    box-shadow:0 20px 48px rgba(40,50,35,.28);transition:transform .25s,box-shadow .25s}
+  .diagbanner:hover{transform:translateY(-2px);box-shadow:0 26px 56px rgba(40,50,35,.34)}
+  .db-deco{flex-shrink:0;width:54px;color:var(--gold-soft);opacity:.85}
+  .db-deco svg{width:100%;height:auto;display:block}
   .db-tx{flex:1;min-width:0}
-  .db-label{display:inline-block;font-size:10.5px;letter-spacing:.2em;color:var(--gold-pale);border:1px solid rgba(231,214,171,.5);border-radius:999px;padding:5px 14px;margin-bottom:16px;font-weight:600}
-  .diagbanner h3{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;color:#fff;font-size:23px;line-height:1.6;letter-spacing:.04em;font-weight:600;margin-bottom:14px}
-  .diagbanner .db-tx p{color:rgba(246,241,231,.9);font-size:13.5px;line-height:1.9;margin:0;max-width:560px}
-  .db-act{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:12px}
-  .db-btn{display:inline-flex;align-items:center;gap:10px;background:var(--ivory);color:var(--sage-deep);padding:16px 34px;border-radius:7px;font-size:15px;letter-spacing:.06em;font-weight:600;text-decoration:none;transition:.2s;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.16)}
-  .db-btn .circ{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;border:1px solid currentColor;font-size:11px;line-height:1}
-  .db-btn:hover{background:#fff;transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.22)}
-  .db-note{font-size:11.5px;color:rgba(246,241,231,.78);letter-spacing:.02em;text-align:center}
+  .diagbanner h3{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;color:#fff;font-size:25px;line-height:1.55;letter-spacing:.05em;font-weight:600;margin-bottom:14px}
+  .diagbanner .db-tx p{color:rgba(246,241,231,.82);font-size:13px;line-height:1.95;margin:0}
+  .db-div{flex-shrink:0;align-self:stretch;width:1px;margin:8px 2px;background:linear-gradient(rgba(217,190,126,0),rgba(217,190,126,.5),rgba(217,190,126,0))}
+  .db-stamp{flex-shrink:0;position:relative;width:94px;height:94px;display:flex;align-items:center;justify-content:center;text-align:center;
+    border:1px solid rgba(217,190,126,.55);border-radius:50%}
+  .db-stamp::before{content:"";position:absolute;inset:5px;border:1px dashed rgba(217,190,126,.45);border-radius:50%}
+  .db-stamp .db-stamp-tx{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;color:#fff;font-size:12.5px;line-height:1.5;letter-spacing:.04em}
+  .db-stamp .db-stamp-tx b{font-size:16px;font-weight:600;color:var(--gold-pale)}
+  .db-cta{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:12px}
+  .db-btn{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,var(--gold-soft) 0%,var(--tan) 100%);
+    color:#34402c;padding:16px 34px;border-radius:999px;font-size:15px;letter-spacing:.06em;font-weight:700;white-space:nowrap;
+    box-shadow:0 8px 22px rgba(201,164,74,.38);transition:box-shadow .25s}
+  .diagbanner:hover .db-btn{box-shadow:0 13px 30px rgba(201,164,74,.5)}
+  .db-btn .circ{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;border:1.5px solid currentColor;font-size:13px;line-height:1}
+  .db-note{font-size:11.5px;color:rgba(246,241,231,.72);letter-spacing:.02em;text-align:center;white-space:nowrap}
 
   @media(max-width:800px){
     .reasons{grid-template-columns:1fr}
@@ -561,11 +569,14 @@
     .fit{grid-template-columns:1fr}
     .stance-body{padding:24px 22px}
     .db-wrap{padding:44px 0}
-    .diagbanner{flex-direction:column;align-items:stretch;text-align:center;padding:32px 26px;gap:22px}
-    .diagbanner h3{font-size:19px}
-    .diagbanner .db-tx p{max-width:none}
-    .db-act{align-items:stretch}
-    .db-btn{justify-content:center;padding:15px 24px}
+    .diagbanner{flex-wrap:wrap;justify-content:center;text-align:center;padding:32px 24px;gap:18px}
+    .db-deco,.db-div,.db-stamp{display:none}
+    .diagbanner h3{font-size:20px}
+    .db-tx{flex:1 1 100%}
+    .diagbanner .db-tx p{font-size:12.5px}
+    .db-cta{flex:1 1 100%}
+    .db-btn{justify-content:center}
+    .db-note{white-space:normal}
     .tasks{grid-template-columns:repeat(2,1fr)}
     .contact-grid{grid-template-columns:1fr;gap:24px}
     .photoband{background-attachment:scroll;min-height:300px}
@@ -655,7 +666,7 @@
         <p class="sub" style="margin-top:10px">初めての業務にも抵抗なく入り、<br>状況整理から運用設計まで伴走します。</p>
       </div>
       <div class="hero-cta">
-        <a class="btn-outline" href="#diagnosis">課題を診断する<span class="circ">→</span></a>
+        <a class="btn-outline" href="check.html">課題を診断する<span class="circ">→</span></a>
         <a class="btn btn-main" href="#contact">30分で、社長が手放せる業務を整理する<span class="circ">→</span></a>
       </div>
     </div>
@@ -698,17 +709,29 @@
 <!-- 診断バナー(1) 課題共感の直後 -->
 <section class="paper db-wrap">
   <div class="wrap">
-    <div class="diagbanner">
+    <a class="diagbanner" href="check.html">
+      <span class="db-deco">
+        <svg viewBox="0 0 56 170" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M30 168 C31 130 26 86 33 40 C35 24 33 14 30 6"/>
+          <path d="M30 44 C18 40 12 46 11 56 C22 57 29 52 30 44Z"/>
+          <path d="M33 64 C45 60 51 66 52 76 C41 77 34 72 33 64Z"/>
+          <path d="M29 86 C17 82 11 88 10 98 C21 99 28 94 29 86Z"/>
+          <path d="M32 108 C44 104 50 110 51 120 C40 121 33 116 32 108Z"/>
+          <path d="M29 130 C17 126 11 132 10 142 C21 143 28 138 29 130Z"/>
+          <circle cx="30" cy="6" r="2" fill="currentColor" stroke="none"/>
+        </svg>
+      </span>
       <div class="db-tx">
-        <span class="db-label">QUICK CHECK</span>
         <h3>社長の手元に残っている業務、<br>どこから手放せる?</h3>
-        <p>3つの質問に答えるだけで、今のバックオフィス課題と、最初に整えるべき業務が見えてきます。</p>
+        <p>3つの質問に答えるだけで、<br>今のバックオフィス課題と、最初に整えるべき業務が見えてきます。</p>
       </div>
-      <div class="db-act">
-        <a class="db-btn" href="#diagnosis">30秒で診断する<span class="circ">→</span></a>
+      <span class="db-div"></span>
+      <span class="db-stamp"><span class="db-stamp-tx"><b>30秒</b>で<br>診断する</span></span>
+      <div class="db-cta">
+        <span class="db-btn">30秒で診断する<span class="circ">›</span></span>
         <span class="db-note">診断後、そのまま無料相談も可能です。</span>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 
@@ -998,124 +1021,6 @@
 </section>
 
 
-<!-- バックオフィス課題 簡易診断 -->
-<section class="paper" id="diagnosis">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="en script">Quick check</span>
-      <h2 class="serif">バックオフィス課題 簡易診断</h2>
-      <p>いま困っていることを選ぶだけで、<br>あなたの会社に合う支援プランの目安がわかります。</p>
-    </div>
-    <div class="diag">
-      <div class="diag-form">
-        <div class="dq">
-          <label><span class="qno">Q1.</span>今いちばん困っていることは？</label>
-          <select id="dq1">
-            <option value="" disabled selected>選択してください</option>
-            <option value="0">社長が事務・採用・請求まで抱えている</option>
-            <option value="1">担当者しかわからない業務が多い</option>
-            <option value="2">請求・勤怠・採用などで抜け漏れがある</option>
-            <option value="3">AIやツールを使いたいが、何から始めればいいかわからない</option>
-            <option value="4">採用や広報を整えたい</option>
-            <option value="5">士業とのやり取りや管理が煩雑</option>
-          </select>
-        </div>
-        <div class="dq">
-          <label><span class="qno">Q2.</span>今の体制は？</label>
-          <select id="dq2">
-            <option value="" disabled selected>選択してください</option>
-            <option value="0">社長ひとりで対応している</option>
-            <option value="1">兼任担当者がいる</option>
-            <option value="2">パート・業務委託に一部お願いしている</option>
-            <option value="3">社員に任せたいが仕組みがない</option>
-            <option value="4">すでに担当者はいるが属人化している</option>
-          </select>
-        </div>
-        <div class="dq">
-          <label><span class="qno">Q3.</span>求めるゴールは？</label>
-          <select id="dq3">
-            <option value="" disabled selected>選択してください</option>
-            <option value="0">まず課題を整理したい</option>
-            <option value="1">業務フローやマニュアルを作りたい</option>
-            <option value="2">実務も一緒に進めながら整えたい</option>
-            <option value="3">AIやツールで効率化したい</option>
-            <option value="4">将来的に社内メンバーへ引き継ぎたい</option>
-          </select>
-        </div>
-        <p class="diag-msg" id="diagMsg"></p>
-        <button type="button" id="diagBtn">診断する</button>
-      </div>
-
-      <div id="diagResult" hidden></div>
-
-      <p class="diag-note">診断結果はあくまで目安です。実際の業務量・体制・優先順位に合わせて、初回相談で最適な進め方をご提案します。</p>
-    </div>
-  </div>
-</section>
-
-<script>
-(function(){
-  var btn=document.getElementById('diagBtn'); if(!btn) return;
-  var plans={
-    p1:{title:'業務整理ライト', price:'月額20万円〜',
-      now:'今は、まず業務の全体像を見える化し、どこに抜け漏れ・重複・属人化があるかを整理するフェーズです。',
-      support:['業務棚卸し','課題整理','月次タスク表作成','簡易マニュアル作成','AI活用ポイントの提案'],
-      goal:['社長や担当者の頭の中にある業務が見える','優先して整えるべき業務がわかる','何を外注し、何を社内に残すべきか判断できる']},
-    p2:{title:'内製化スタンダード', price:'月額35万円〜',
-      now:'今は、属人化している業務を整理し、誰が見ても迷わず動ける運用に変えていくフェーズです。',
-      support:['業務フロー作成','運用ルール整備','チェックリスト作成','業務手順書・テンプレート作成','AI・ツール活用設計','月次改善ミーティング'],
-      goal:['担当者以外でも業務の流れがわかる','抜け漏れや確認待ちが減る','AIやツールを使った効率化が現場に定着する']},
-    p3:{title:'バックオフィス構築伴走', price:'月額50万円〜',
-      now:'今は、個別業務の整理だけでなく、会社全体のバックオフィス体制をつくっていくフェーズです。',
-      support:['業務設計','担当体制づくり','採用・労務・経理まわりの運用整備','士業連携','管理表・マニュアル・テンプレート整備','AI・ツールを活用した省力化設計'],
-      goal:['社長に業務が集中しにくくなる','社内で役割分担しながら業務が回る','採用・労務・経理などの管理体制が整う','将来的に社内メンバーへ引き継げる']}
-  };
-  var q1p=['p1','p2','p2','p2','p2','p3'];
-  var q2p=['p1','p2','p2','p3','p2'];
-  var q3p=['p1','p2','p2','p2','p3'];
-
-  function li(arr,cls){return arr.map(function(t){return '<li>'+t+'</li>';}).join('');}
-
-  function render(key){
-    var pl=plans[key];
-    var html=''
-      +'<div class="dcard-result">'
-      +'<span class="dr-label">診断結果</span>'
-      +'<h3>あなたには <b>'+pl.title+'</b> がおすすめです<small>'+pl.price+'</small></h3>'
-      +'<p class="dr-now">'+pl.now+'</p>'
-      +'<div class="dr-cols">'
-      +'<div class="dr-col"><p class="dr-ct">おすすめ支援内容</p><ul class="dr-support">'+li(pl.support)+'</ul></div>'
-      +'<div class="dr-col"><p class="dr-ct">目指せる状態</p><ul class="dr-goal">'+li(pl.goal)+'</ul></div>'
-      +'</div>'
-      +'<p class="dr-now" style="margin-bottom:18px">この状態は、社長の時間が毎月かなり奪われている可能性があります。まずは30分で、どの業務から手放せるか整理できます。</p>'
-      +'<a class="btn dr-cta" href="#contact" data-plan="'+pl.title+'">30分で、手放せる業務を相談する</a>'
-      +'</div>';
-    var box=document.getElementById('diagResult');
-    box.innerHTML=html; box.hidden=false;
-    var cta=box.querySelector('.dr-cta');
-    cta.addEventListener('click',function(){
-      var msg=document.getElementById('f-message');
-      var topic=document.getElementById('f-topic');
-      if(topic){ for(var i=0;i<topic.options.length;i++){ if(topic.options[i].text.indexOf('料金')>=0){topic.selectedIndex=i;break;} } }
-      if(msg){ msg.value='簡易診断の結果、「'+this.getAttribute('data-plan')+'」が気になっています。詳しい支援内容を相談したいです。'; }
-    });
-    box.scrollIntoView({behavior:'smooth', block:'center'});
-  }
-
-  btn.addEventListener('click',function(){
-    var a1=document.getElementById('dq1').value, a2=document.getElementById('dq2').value, a3=document.getElementById('dq3').value;
-    var msg=document.getElementById('diagMsg');
-    if(a1===''||a2===''||a3===''){ msg.textContent='3つすべてお選びください。'; return; }
-    msg.textContent='';
-    var s={p1:0,p2:0,p3:0};
-    s[q1p[a1]]+=1; s[q2p[a2]]+=1; s[q3p[a3]]+=2;
-    var win=q3p[a3];
-    ['p1','p2','p3'].forEach(function(p){ if(s[p]>s[win]) win=p; });
-    render(win);
-  });
-})();
-</script>
-
 <!-- 向いている会社 / 向いていない会社 -->
 <section class="alt" id="fit">
   <div class="wrap">
@@ -1155,17 +1060,29 @@
 <!-- 診断バナー(2) 料金プランの直前(再掲) -->
 <section class="alt db-wrap">
   <div class="wrap">
-    <div class="diagbanner">
+    <a class="diagbanner" href="check.html">
+      <span class="db-deco">
+        <svg viewBox="0 0 56 170" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M30 168 C31 130 26 86 33 40 C35 24 33 14 30 6"/>
+          <path d="M30 44 C18 40 12 46 11 56 C22 57 29 52 30 44Z"/>
+          <path d="M33 64 C45 60 51 66 52 76 C41 77 34 72 33 64Z"/>
+          <path d="M29 86 C17 82 11 88 10 98 C21 99 28 94 29 86Z"/>
+          <path d="M32 108 C44 104 50 110 51 120 C40 121 33 116 32 108Z"/>
+          <path d="M29 130 C17 126 11 132 10 142 C21 143 28 138 29 130Z"/>
+          <circle cx="30" cy="6" r="2" fill="currentColor" stroke="none"/>
+        </svg>
+      </span>
       <div class="db-tx">
-        <span class="db-label">QUICK CHECK</span>
         <h3>社長の手元に残っている業務、<br>どこから手放せる?</h3>
-        <p>3つの質問に答えるだけで、今のバックオフィス課題と、最初に整えるべき業務が見えてきます。</p>
+        <p>3つの質問に答えるだけで、<br>今のバックオフィス課題と、最初に整えるべき業務が見えてきます。</p>
       </div>
-      <div class="db-act">
-        <a class="db-btn" href="#diagnosis">30秒で診断する<span class="circ">→</span></a>
+      <span class="db-div"></span>
+      <span class="db-stamp"><span class="db-stamp-tx"><b>30秒</b>で<br>診断する</span></span>
+      <div class="db-cta">
+        <span class="db-btn">30秒で診断する<span class="circ">›</span></span>
         <span class="db-note">診断後、そのまま無料相談も可能です。</span>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 
