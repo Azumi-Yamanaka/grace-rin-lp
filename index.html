@@ -527,6 +527,12 @@
   .pquote{background:var(--ivory-2);border-radius:10px;padding:24px 28px;margin:30px auto 0;max-width:840px}
   .pquote p{font-size:13px;color:var(--ink-soft);line-height:2.05}
   .pquote b{color:var(--sage-ink);font-weight:600}
+  /* 最初の1ヶ月 画像レイアウト */
+  .month1-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:34px;align-items:stretch;max-width:960px;margin:0 auto}
+  .month1-photo{border-radius:14px;overflow:hidden;min-height:380px;box-shadow:0 16px 38px rgba(143,162,134,.2)}
+  .month1-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .month1-layout .month1-grid{grid-template-columns:1fr;padding:28px 32px}
+  .month1-layout .month1-note{text-align:left;margin:18px 0 0;max-width:none}
   /* ヘッダー英語表記 + hover日本語ツールチップ */
   .nav a.nlink{position:relative}
   .nav a.nlink .en{font-family:-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:12.5px;letter-spacing:.14em;font-weight:600;color:var(--ink);transition:color .2s}
@@ -568,6 +574,9 @@
     .month1-grid{grid-template-columns:1fr;padding:24px 22px}
     .fit{grid-template-columns:1fr}
     .stance-body{padding:24px 22px}
+    .month1-layout{grid-template-columns:1fr;gap:18px}
+    .month1-photo{min-height:240px}
+    .month1-layout .month1-grid{padding:24px 22px}
     .db-wrap{padding:44px 0}
     .diagbanner{flex-wrap:wrap;justify-content:center;text-align:center;padding:32px 24px;gap:18px}
     .db-deco,.db-div,.db-stamp{display:none}
@@ -948,6 +957,15 @@
   </div>
 </section>
 
+<!-- 写真バンドC(会社に残る) -->
+<section class="photoband" style="background-image:url('img/hero-1.jpg')">
+  <div class="wrap">
+    <span class="pb-kw">WHAT WE LEAVE</span>
+    <p class="pb-lead serif">“やってもらう”で、終わらせない。<br>会社に、仕組みが残る。</p>
+    <p class="pb-sub">整えた業務フロー・判断基準・マニュアルは、<br>すべて会社の資産として残ります。</p>
+  </div>
+</section>
+
 <!-- 支援領域 -->
 <section class="alt" id="domains">
   <div class="wrap">
@@ -1004,18 +1022,21 @@
       <span class="en script">First month</span>
       <h2 class="serif">最初の1ヶ月で、社長の手元にある業務を見える化します。</h2>
     </div>
-    <div class="month1">
-      <ul class="month1-grid">
-        <li>業務ヒアリング</li>
-        <li>社長／担当者のタスク棚卸し</li>
-        <li>月次業務の洗い出し</li>
-        <li>優先順位づけ</li>
-        <li>すぐに手放せる業務の切り出し</li>
-        <li>管理表・チェックリストの作成</li>
-        <li>業務フローの整理</li>
-        <li>必要に応じてAI・ツール導線を設計</li>
-      </ul>
-      <p class="month1-note">まずは、社長や担当者の頭の中にある業務を見える化し、<br>どの業務から手放せるか、どこを仕組み化すべきかを整理します。</p>
+    <div class="month1-layout">
+      <div class="month1-photo"><img src="img/hero-3.jpg" alt="業務の棚卸し・見える化のイメージ"></div>
+      <div class="month1-body">
+        <ul class="month1-grid">
+          <li>業務ヒアリング</li>
+          <li>社長／担当者のタスク棚卸し</li>
+          <li>月次業務の洗い出し</li>
+          <li>優先順位づけ</li>
+          <li>すぐに手放せる業務の切り出し</li>
+          <li>管理表・チェックリストの作成</li>
+          <li>業務フローの整理</li>
+          <li>必要に応じてAI・ツール導線を設計</li>
+        </ul>
+        <p class="month1-note">まずは、社長や担当者の頭の中にある業務を見える化し、どの業務から手放せるか、どこを仕組み化すべきかを整理します。</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1159,6 +1180,15 @@
         <div class="sn">STEP 6</div><h3>さらに効率化へ</h3><p>変化や成長に合わせ、仕組みや改善をサポート。</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- 写真バンドD(まず書き出す) -->
+<section class="photoband" style="background-image:url('img/desk_warm.jpg')">
+  <div class="wrap">
+    <span class="pb-kw">FIRST STEP</span>
+    <p class="pb-lead serif">まずは、社長の頭の中を<br>一緒に書き出すことから。</p>
+    <p class="pb-sub">30分の相談で、どの業務から手放せるかが見えてきます。</p>
   </div>
 </section>
 
