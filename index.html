@@ -492,7 +492,80 @@
     .reveal{opacity:1!important;transform:none!important}
   }
 
+  /* ── 2026-06 リライト追加セクション ── */
+  /* 代行ではない宣言 */
+  .stance{max-width:880px;margin:0 auto}
+  .stance-body{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--sage);border-radius:10px;padding:34px 40px}
+  .stance-body p{font-size:14px;line-height:2.15;color:var(--ink-soft)}
+  .stance-body p + p{margin-top:16px}
+  .stance-body b{color:var(--sage-ink);font-weight:600}
+  /* 選ばれる理由 */
+  .reasons{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:920px;margin:0 auto}
+  .reason{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:30px 32px;border-top:3px solid var(--sage)}
+  .reason .rno{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--ivory-2);color:var(--gold);font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:18px;font-weight:600;margin-bottom:16px}
+  .reason h3{font-size:17px;font-weight:700;color:var(--ink);margin-bottom:13px;letter-spacing:.03em;line-height:1.5}
+  .reason p{font-size:13px;color:var(--ink-soft);line-height:2}
+  .reason p + p{margin-top:11px}
+  .reason .rq{margin:13px 0;padding-left:15px;border-left:2px solid var(--gold-pale);color:var(--sage-ink);font-size:12.5px;line-height:1.95}
+  /* 支援領域 */
+  .domain-axis{text-align:center;font-size:15px;color:var(--ink);max-width:720px;margin:0 auto 42px;line-height:2.05;letter-spacing:.02em}
+  .domain-axis b{color:var(--sage-ink);font-weight:600}
+  .domains{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1040px;margin:0 auto}
+  /* 最初の1ヶ月 */
+  .month1{max-width:880px;margin:0 auto}
+  .month1-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 36px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:30px 40px;list-style:none}
+  .month1-grid li{position:relative;padding:12px 0 12px 30px;font-size:13.5px;color:var(--ink);line-height:1.65;border-bottom:1px dashed var(--line)}
+  .month1-grid li::before{content:"";position:absolute;left:3px;top:17px;width:13px;height:7px;border-left:2px solid var(--sage-2);border-bottom:2px solid var(--sage-2);transform:rotate(-45deg)}
+  .month1-note{text-align:center;font-size:13.5px;color:var(--ink-soft);line-height:2.05;margin-top:30px;max-width:720px;margin-left:auto;margin-right:auto}
+  /* 向き不向き */
+  .fit{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:920px;margin:0 auto}
+  .fit .ba-col{padding:30px 32px}
+  .fit .ba-col .bt{font-size:15px;margin-bottom:16px}
+  .fit-note{text-align:center;font-size:13px;color:var(--ink-soft);line-height:2.05;margin-top:34px;max-width:740px;margin-left:auto;margin-right:auto;padding:22px 26px;background:var(--ivory-2);border-radius:10px}
+  .fit-note b{color:var(--sage-ink);font-weight:600}
+  /* プロフィール評価コメント */
+  .pquote{background:var(--ivory-2);border-radius:10px;padding:24px 28px;margin:30px auto 0;max-width:840px}
+  .pquote p{font-size:13px;color:var(--ink-soft);line-height:2.05}
+  .pquote b{color:var(--sage-ink);font-weight:600}
+  /* ヘッダー英語表記 + hover日本語ツールチップ */
+  .nav a.nlink{position:relative}
+  .nav a.nlink .en{font-family:-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:12.5px;letter-spacing:.14em;font-weight:600;color:var(--ink);transition:color .2s}
+  .nav a.nlink:hover .en{color:var(--sage-ink)}
+  .nav a.nlink .ja{position:absolute;left:50%;top:calc(100% + 2px);transform:translateX(-50%) translateY(4px);
+    white-space:nowrap;font-size:11px;letter-spacing:.04em;color:var(--sage-ink);background:#fff;
+    padding:5px 12px;border-radius:7px;border:1px solid var(--line);box-shadow:0 6px 18px rgba(74,70,63,.14);
+    opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;z-index:60}
+  .nav a.nlink:hover .ja{opacity:1;transform:translateX(-50%) translateY(0)}
+  /* 診断バナー */
+  .db-wrap{padding:60px 0}
+  .diagbanner{max-width:1040px;margin:0 auto;position:relative;overflow:hidden;
+    background:linear-gradient(135deg,var(--sage-deep) 0%,var(--olive) 55%,var(--sage-2) 122%);
+    border-radius:16px;padding:44px 52px;display:flex;align-items:center;justify-content:space-between;gap:44px;
+    box-shadow:0 18px 44px rgba(68,80,61,.24)}
+  .diagbanner::before{content:"";position:absolute;right:-46px;top:-66px;width:240px;height:240px;border-radius:50%;background:rgba(217,190,126,.13);pointer-events:none}
+  .diagbanner::after{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--gold-soft);opacity:.85}
+  .db-tx{flex:1;min-width:0}
+  .db-label{display:inline-block;font-size:10.5px;letter-spacing:.2em;color:var(--gold-pale);border:1px solid rgba(231,214,171,.5);border-radius:999px;padding:5px 14px;margin-bottom:16px;font-weight:600}
+  .diagbanner h3{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;color:#fff;font-size:23px;line-height:1.6;letter-spacing:.04em;font-weight:600;margin-bottom:14px}
+  .diagbanner .db-tx p{color:rgba(246,241,231,.9);font-size:13.5px;line-height:1.9;margin:0;max-width:560px}
+  .db-act{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:12px}
+  .db-btn{display:inline-flex;align-items:center;gap:10px;background:var(--ivory);color:var(--sage-deep);padding:16px 34px;border-radius:7px;font-size:15px;letter-spacing:.06em;font-weight:600;text-decoration:none;transition:.2s;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.16)}
+  .db-btn .circ{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;border:1px solid currentColor;font-size:11px;line-height:1}
+  .db-btn:hover{background:#fff;transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.22)}
+  .db-note{font-size:11.5px;color:rgba(246,241,231,.78);letter-spacing:.02em;text-align:center}
+
   @media(max-width:800px){
+    .reasons{grid-template-columns:1fr}
+    .domains{grid-template-columns:repeat(2,1fr)}
+    .month1-grid{grid-template-columns:1fr;padding:24px 22px}
+    .fit{grid-template-columns:1fr}
+    .stance-body{padding:24px 22px}
+    .db-wrap{padding:44px 0}
+    .diagbanner{flex-direction:column;align-items:stretch;text-align:center;padding:32px 26px;gap:22px}
+    .diagbanner h3{font-size:19px}
+    .diagbanner .db-tx p{max-width:none}
+    .db-act{align-items:stretch}
+    .db-btn{justify-content:center;padding:15px 24px}
     .tasks{grid-template-columns:repeat(2,1fr)}
     .contact-grid{grid-template-columns:1fr;gap:24px}
     .photoband{background-attachment:scroll;min-height:300px}
@@ -559,12 +632,12 @@
       </div>
     </div>
     <nav class="nav">
-      <a href="#service">サービスについて</a>
-      <a href="#pillars">支援できる領域</a>
-      <a href="price.html">料金プラン</a>
-      <a href="about.html">Grace Rinについて</a>
-      <a href="#faq">よくあるご質問</a>
-      <a class="ncta" href="#contact">お問い合わせ・ご相談</a>
+      <a class="nlink" href="#service"><span class="en">Services</span><span class="ja">サービスについて</span></a>
+      <a class="nlink" href="#domains"><span class="en">Scope</span><span class="ja">支援できる領域</span></a>
+      <a class="nlink" href="#price"><span class="en">Pricing</span><span class="ja">料金プラン</span></a>
+      <a class="nlink" href="about.html"><span class="en">About</span><span class="ja">Grace Rinについて</span></a>
+      <a class="nlink" href="#faq"><span class="en">FAQ</span><span class="ja">よくあるご質問</span></a>
+      <a class="ncta" href="#contact">無料相談</a>
     </nav>
   </div>
 </div>
@@ -575,66 +648,67 @@
   <div class="wrap">
     <div class="hero-inner">
       <div class="hero-copy">
-        <h1 class="serif">社長が抱えている事務を、<br>社内で回る<span class="accent">仕組み</span>に変える。</h1>
-        <div class="hero-kw"><span class="t">“代行”ではなく、<span class="u">内製化ディレクション</span>。</span></div>
-        <p class="sub">総務・経理・採用まわりの業務を整理し、<br>AIやツールも活用しながら、会社に残る運用をつくります。</p>
+        <div class="hero-kw"><span class="t">社員数名〜30名規模の会社へ</span></div>
+        <h1 class="serif">社長が抱えている事務・採用・請求業務を、<br>社内で回る<span class="accent">仕組み</span>に変える。</h1>
+        <div class="hero-kw" style="margin-top:14px"><span class="t">“代行”ではなく、<span class="u">内製化ディレクション</span>。</span></div>
+        <p class="sub">Grace Rinは、総務・経理・採用まわりの業務を整理し、<br>AIやツールも活用しながら、会社に残る運用をつくります。</p>
+        <p class="sub" style="margin-top:10px">初めての業務にも抵抗なく入り、<br>状況整理から運用設計まで伴走します。</p>
       </div>
       <div class="hero-cta">
-        <a class="btn-outline" href="#pillars">サービス内容を見る<span class="circ">→</span></a>
         <a class="btn-outline" href="#diagnosis">課題を診断する<span class="circ">→</span></a>
-        <a class="btn btn-main" href="#contact">まずは相談する<span class="circ">→</span></a>
+        <a class="btn btn-main" href="#contact">30分で、社長が手放せる業務を整理する<span class="circ">→</span></a>
       </div>
     </div>
   </div>
 </header>
 
-<!-- お悩み + 成長基盤 -->
-<section class="paper" id="service" style="padding:0">
-  <div class="worry-band">
-    <div class="worry-inner">
-      <h2 class="bar-head serif">こんなお悩みはありませんか?</h2>
-      <ul class="worry-list">
-        <li>売上をつくる時間がほしいのに、事務作業で一日が終わってしまう</li>
-        <li>経理も労務も総務も、結局すべて自分でやっている</li>
-        <li>人を雇うほどではない。でも、一人ではもう限界を感じている</li>
-        <li>請求や支払いの抜け漏れが怖い。お金の流れが頭の中にしかない</li>
-        <li>事業は伸ばしたいのに、バックオフィスがボトルネックになっている</li>
-        <li>自分が止まれば、会社も止まる。仕組みが何も残っていない</li>
-      </ul>
+<!-- 代行ではなく内製化 / 作業者ではなく伴走者 -->
+<section class="alt" id="stance">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en script">Our stance</span>
+      <h2 class="serif">代行ではなく、内製化。<br>作業者ではなく、伴走者。</h2>
     </div>
-  </div>
-  <div class="grow-wrap">
-    <div class="grow value">
-      <span class="vlabel">Grace Rinが会社に残すもの</span>
-      <h3 class="serif">整えた仕組みは、会社の中に残ります。</h3>
-      <p>属人化した業務を整理し、AI・ツールも活用しながら、<b class="nb">少人数でも迷わず回る運用</b>へ。<br>外注で終わらせず、業務フロー・ルール・マニュアル・判断基準を、会社に残る形に整えます。</p>
-      <div class="vcards">
-        <div class="vcard">
-          <span class="vno">1</span>
-          <h4>業務フロー</h4>
-          <p>誰が・いつ・何をするかを整理し、業務の流れを見える化します。</p>
-        </div>
-        <div class="vcard">
-          <span class="vno">2</span>
-          <h4>判断基準</h4>
-          <p>確認先や対応ルールを整え、担当者が迷わず進められる状態にします。</p>
-        </div>
-        <div class="vcard">
-          <span class="vno">3</span>
-          <h4>運用資産</h4>
-          <p>マニュアル・テンプレート・管理表を残し、社内で引き継げる仕組みにします。</p>
-        </div>
+    <div class="stance">
+      <div class="stance-body">
+        <p>Grace Rinは、<b>指示された作業をこなすだけの事務代行ではありません。</b>業務の背景や目的を理解し、社長や担当者と対話しながら、社内で回る仕組みをつくる内製化支援です。</p>
+        <p>社長の頭の中にある業務を一緒に整理し、社内で回る仕組みに変える、伴走型の支援。依頼された作業をそのまま処理するのではなく、業務の背景や目的を理解したうえで、<b>フロー・判断基準・マニュアル・管理表</b>へ落とし込み、社内に残る運用をつくります。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 写真バンドA(スタンス) -->
-<section class="photoband" style="background-image:url('img/hero-2.jpg')">
+<!-- 課題共感 -->
+<section class="paper" id="service" style="padding:0">
+  <div class="worry-band">
+    <div class="worry-inner">
+      <h2 class="bar-head serif">事業は伸びているのに、<br>社長の手元に“細かい仕事”が残り続けていませんか?</h2>
+      <ul class="worry-list">
+        <li>請求・支払い・契約まわりを、いまも社長が見ている</li>
+        <li>採用や求人対応が、いつも後回しになっている</li>
+        <li>Slackやチャットで、毎回「これどうしますか?」と聞かれる</li>
+        <li>判断基準がなく、結局すべてが社長確認になってしまう</li>
+        <li>業務が人に紐づいていて、誰かに引き継げない</li>
+        <li>AIやツールを入れても、現場で定着していない</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 診断バナー(1) 課題共感の直後 -->
+<section class="paper db-wrap">
   <div class="wrap">
-    <span class="pb-kw">CONCEPT</span>
-    <p class="pb-lead serif">私がやるのは、作業代行ではありません。<br>“人が動ける状態”をつくることです。</p>
-    <p class="pb-sub">業務を巻き取るのではなく、<br>会社に戻せる形に整えます。</p>
+    <div class="diagbanner">
+      <div class="db-tx">
+        <span class="db-label">QUICK CHECK</span>
+        <h3>社長の手元に残っている業務、<br>どこから手放せる?</h3>
+        <p>3つの質問に答えるだけで、今のバックオフィス課題と、最初に整えるべき業務が見えてきます。</p>
+      </div>
+      <div class="db-act">
+        <a class="db-btn" href="#diagnosis">30秒で診断する<span class="circ">→</span></a>
+        <span class="db-note">診断後、そのまま無料相談も可能です。</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -643,8 +717,8 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="en script">What we do</span>
-      <h2 class="serif">Grace Rinが整える4つのこと</h2>
-      <p>業務を見える化し、仕組みに変える</p>
+      <h2 class="serif">Grace Rinができること</h2>
+      <p>業務を見える化し、社内で回る仕組みに変える</p>
     </div>
     <div class="pillars-deco">
       <svg width="64" height="18" viewBox="0 0 64 18" fill="none" stroke="#c9a44a" stroke-width="1" stroke-linecap="round">
@@ -725,10 +799,43 @@
         <p>外注で終わらせず、<b>社内の人が迷わず動ける状態</b>まで伴走します。</p>
       </div>
     </div>
-    <div class="areas-tags">
-      <span class="lbl">内製化のために対応できる領域</span>
-      <div class="tags">
-        <span class="tag">総務</span><span class="tag">経理</span><span class="tag">労務</span><span class="tag">採用</span><span class="tag">秘書</span><span class="tag">Web・広報</span><span class="tag">AI・業務効率化</span><span class="tag">士業連携</span>
+  </div>
+</section>
+
+<!-- Grace Rinが選ばれる理由 -->
+<section class="paper" id="reasons">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en script">Why Grace Rin</span>
+      <h2 class="serif">Grace Rinが選ばれる理由</h2>
+      <p>まだ整いきっていない現場に入り、状況を早く理解し、<br>必要な業務から順に形にしていくことが得意です。</p>
+    </div>
+    <div class="reasons">
+      <div class="reason">
+        <span class="rno">1</span>
+        <h3>キャッチアップの早さ</h3>
+        <p>初めての業界・業務であっても、まずは全体像をつかみ、関係者・業務フロー・判断基準を整理することを得意としています。</p>
+        <p class="rq">「今どこで詰まっているのか」<br>「誰が何を判断しているのか」<br>「どこを整えると社長の手が離れるのか」</p>
+        <p>を早期に見立て、必要な順番で整えていきます。</p>
+      </div>
+      <div class="reason">
+        <span class="rno">2</span>
+        <h3>多岐にわたる業務への対応力</h3>
+        <p>総務・採用・労務・経理補助・秘書・営業サポート・SNS運用・AI活用まで、幅広い実務を横断してきました。</p>
+        <p>ひとつの専門業務だけを見るのではなく、会社全体の動きの中で、バックオフィス・採用・情報整理・社内運用をつなげて整えることができます。</p>
+      </div>
+      <div class="reason">
+        <span class="rno">3</span>
+        <h3>初めての業務にも抵抗なく入れる柔軟性</h3>
+        <p>「やったことがないからできません」ではなく、まず構造を理解し、必要な情報を集め、実行しながら形にしていくタイプです。</p>
+        <p>新しいツール、新しい業務、新しい業界でも、抵抗感なくキャッチアップし、現場に合う運用へ落とし込んでいきます。</p>
+      </div>
+      <div class="reason">
+        <span class="rno">4</span>
+        <h3>ただ受けるのではなく、先回りして整える</h3>
+        <p>依頼された作業をこなすだけではなく、</p>
+        <p class="rq">「この業務は誰が見ても分かるようにした方がいい」<br>「ここは判断基準を作った方がいい」<br>「この作業はAIやテンプレート化で軽くできる」</p>
+        <p>といった視点で、社内に残る形へ整えていきます。</p>
       </div>
     </div>
   </div>
@@ -737,9 +844,9 @@
 <!-- 写真バンドB(伴走) -->
 <section class="photoband" style="background-image:url('img/hero-2.jpg')">
   <div class="wrap">
-    <span class="pb-kw">HOW WE WORK</span>
-    <p class="pb-lead serif">AI・ツール・運用ルールで、<br>無理なく回る形にする。</p>
-    <p class="pb-sub">人の手で丁寧に整えながら、AIやツールも組み合わせて、<br>少人数でも迷わず回るバックオフィスへ。</p>
+    <span class="pb-kw">STANCE</span>
+    <p class="pb-lead serif">作業者ではなく、<br>伴走者として入ります。</p>
+    <p class="pb-sub">業務を巻き取るのではなく、社内で回る形に整える。<br>人の手で丁寧に、AIやツールも組み合わせながら。</p>
   </div>
 </section>
 
@@ -798,24 +905,94 @@
       <div class="ba-col ba-before">
         <p class="bt">Before</p>
         <ul>
-          <li>担当者しかやり方がわからない</li>
-          <li>毎回Slackや口頭で確認が必要</li>
-          <li>月末に抜け漏れが起きる</li>
-          <li>メール文や資料を毎回ゼロから作る</li>
-          <li>AIを使いたいが活用が属人的</li>
+          <li>社長が毎月、請求・採用・勤怠確認に追われている</li>
+          <li>毎回Slackで「これどうしますか?」が飛んでくる</li>
+          <li>採用・請求・契約が頭の中で管理されている</li>
+          <li>AI活用が個人任せになっている</li>
         </ul>
       </div>
       <div class="ba-arrow">→</div>
       <div class="ba-col ba-after">
         <p class="bt">After</p>
         <ul>
-          <li>誰が見ても手順がわかる</li>
-          <li>判断基準を見れば進められる</li>
-          <li>チェックリストで抜け漏れを防げる</li>
-          <li>テンプレートからすぐ作成できる</li>
-          <li>業務別プロンプトで再現性を持って使える</li>
+          <li>月次タスク表と確認フローを整備し、担当者へ移管できる状態にする</li>
+          <li>判断基準表を作成し、現場が自分で判断できる範囲を増やす</li>
+          <li>管理表・テンプレート・チェックリストで抜け漏れを防ぐ</li>
+          <li>業務別の使い方やプロンプトを整え、現場で再現できる形にする</li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- 支援領域 -->
+<section class="alt" id="domains">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en script">Coverage</span>
+      <h2 class="serif">支援領域</h2>
+    </div>
+    <p class="domain-axis">主軸は、<b>社長の手元にあるバックオフィス業務の整理・内製化</b>です。<br>幅広く対応しますが、すべては「社内で回る仕組みづくり」につながっています。</p>
+    <div class="domains">
+      <div class="tcard">
+        <div class="th">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#5e6e57" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 12h6M9 16h4"/></svg>
+          <h3>経営事務まわり</h3>
+        </div>
+        <ul>
+          <li>請求</li><li>支払い</li><li>契約</li><li>月次タスク</li><li>士業連携</li>
+        </ul>
+      </div>
+      <div class="tcard">
+        <div class="th">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#5e6e57" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
+          <h3>採用・人まわり</h3>
+        </div>
+        <ul>
+          <li>求人票</li><li>スカウト文</li><li>候補者管理</li><li>入社手続き</li>
+        </ul>
+      </div>
+      <div class="tcard">
+        <div class="th">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#5e6e57" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 13l2 2 4-4"/></svg>
+          <h3>社内運用まわり</h3>
+        </div>
+        <ul>
+          <li>マニュアル</li><li>判断基準</li><li>チェックリスト</li><li>フォルダ整理</li>
+        </ul>
+      </div>
+      <div class="tcard">
+        <div class="th">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#5e6e57" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9l-4.7 1.3L12 15l-1.8-4.7L5.5 9l4.7-1.3z"/><circle cx="18" cy="17.5" r="2"/></svg>
+          <h3>AI・ツール活用</h3>
+        </div>
+        <ul>
+          <li>ChatGPT</li><li>Notion</li><li>Google Workspace</li><li>freee など</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 最初の1ヶ月でやること -->
+<section class="paper" id="month1">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en script">First month</span>
+      <h2 class="serif">最初の1ヶ月で、社長の手元にある業務を見える化します。</h2>
+    </div>
+    <div class="month1">
+      <ul class="month1-grid">
+        <li>業務ヒアリング</li>
+        <li>社長／担当者のタスク棚卸し</li>
+        <li>月次業務の洗い出し</li>
+        <li>優先順位づけ</li>
+        <li>すぐに手放せる業務の切り出し</li>
+        <li>管理表・チェックリストの作成</li>
+        <li>業務フローの整理</li>
+        <li>必要に応じてAI・ツール導線を設計</li>
+      </ul>
+      <p class="month1-note">まずは、社長や担当者の頭の中にある業務を見える化し、<br>どの業務から手放せるか、どこを仕組み化すべきかを整理します。</p>
     </div>
   </div>
 </section>
@@ -910,7 +1087,8 @@
       +'<div class="dr-col"><p class="dr-ct">おすすめ支援内容</p><ul class="dr-support">'+li(pl.support)+'</ul></div>'
       +'<div class="dr-col"><p class="dr-ct">目指せる状態</p><ul class="dr-goal">'+li(pl.goal)+'</ul></div>'
       +'</div>'
-      +'<a class="btn dr-cta" href="#contact" data-plan="'+pl.title+'">このプランで相談する</a>'
+      +'<p class="dr-now" style="margin-bottom:18px">この状態は、社長の時間が毎月かなり奪われている可能性があります。まずは30分で、どの業務から手放せるか整理できます。</p>'
+      +'<a class="btn dr-cta" href="#contact" data-plan="'+pl.title+'">30分で、手放せる業務を相談する</a>'
       +'</div>';
     var box=document.getElementById('diagResult');
     box.innerHTML=html; box.hidden=false;
@@ -938,40 +1116,100 @@
 })();
 </script>
 
-<!-- よくあるご相談例 -->
-<section class="paper" id="cases">
+<!-- 向いている会社 / 向いていない会社 -->
+<section class="alt" id="fit">
   <div class="wrap">
     <div class="sec-head">
-      <span class="en script">Common cases</span>
-      <h2 class="serif">よくあるご相談例</h2>
+      <span class="en script">Good fit</span>
+      <h2 class="serif">Grace Rinが合う会社／合いにくい会社</h2>
+      <p>合う・合わないがあるからこそ、相性の良い形でご一緒したいと考えています。</p>
     </div>
-    <div class="rcases">
-      <div class="rcase">
-        <span class="rno">CASE 01</span>
-        <h3>社長が請求・採用・勤怠まで抱えている</h3>
-        <p>業務を棚卸しし、<b>請求フロー・採用管理表・月次タスク表</b>を整備します。</p>
+    <div class="fit">
+      <div class="ba-col ba-after">
+        <p class="bt">向いている会社</p>
+        <ul>
+          <li>社長や担当者の頭の中にある業務を整理したい</li>
+          <li>外注に丸投げではなく、社内に仕組みを残したい</li>
+          <li>一緒に業務を見直しながら、運用を整えたい</li>
+          <li>「言われたことだけ」ではなく、気づいた改善点も提案してほしい</li>
+          <li>バックオフィスを、会社の成長に合わせて整えていきたい</li>
+          <li>社員数名〜30名規模で、まだ専任バックオフィスを置くほどではない</li>
+          <li>AIやツールを活用したいが、現場に定着していない</li>
+        </ul>
       </div>
-      <div class="rcase">
-        <span class="rno">CASE 02</span>
-        <h3>担当者しかわからない業務が増えている</h3>
-        <p><b>マニュアル化・共有フォルダ整理・引き継ぎ資料</b>を作成します。</p>
+      <div class="ba-col ba-before">
+        <p class="bt">向いていない会社</p>
+        <ul>
+          <li>決まった作業だけを、指示通りに安く依頼したい</li>
+          <li>業務背景や目的の共有なく、タスクだけを任せたい</li>
+          <li>すべて外部に丸投げし、社内に残す意思がない</li>
+          <li>対話や改善提案よりも、トップダウンの指示遂行を求めている</li>
+          <li>短期的な人手不足の穴埋めだけを求めている</li>
+        </ul>
       </div>
-      <div class="rcase">
-        <span class="rno">CASE 03</span>
-        <h3>採用や広報も始めたいが、何から整えるべきかわからない</h3>
-        <p><b>求人票・スカウト文・候補者管理・発信導線</b>を整理します。</p>
+    </div>
+    <p class="fit-note">Grace Rinは、作業者ではなく、業務を整える伴走者として入ります。そのため、業務の背景や目的を共有いただきながら、対話を通じて進めることを大切にしています。単純な作業依頼や、背景共有のないタスク処理だけをお求めの場合は、一般的な事務代行サービスの方が合う場合があります。</p>
+  </div>
+</section>
+
+<!-- 診断バナー(2) 料金プランの直前(再掲) -->
+<section class="alt db-wrap">
+  <div class="wrap">
+    <div class="diagbanner">
+      <div class="db-tx">
+        <span class="db-label">QUICK CHECK</span>
+        <h3>社長の手元に残っている業務、<br>どこから手放せる?</h3>
+        <p>3つの質問に答えるだけで、今のバックオフィス課題と、最初に整えるべき業務が見えてきます。</p>
       </div>
-      <div class="rcase">
-        <span class="rno">CASE 04</span>
-        <h3>AIやツールを使いたいが、何から始めればいいかわからない</h3>
-        <p>現在の業務を整理したうえで、ChatGPT・Claude Code・Notion・Google Workspaceなどを活用し、<b>議事録・メール文・求人票・タスク管理・資料作成</b>の効率化導線を整えます。</p>
+      <div class="db-act">
+        <a class="db-btn" href="#diagnosis">30秒で診断する<span class="circ">→</span></a>
+        <span class="db-note">診断後、そのまま無料相談も可能です。</span>
       </div>
     </div>
   </div>
 </section>
 
+<!-- 料金プラン -->
+<section class="paper" id="price">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en script">Price</span>
+      <h2 class="serif">料金プラン</h2>
+    </div>
+    <p class="price-intro">Grace Rinの料金は、単純な作業時間に対する費用ではありません。<br><b>業務の棚卸し・運用設計・判断基準づくり・マニュアル化・社内定着</b>まで含めた、内製化支援の費用です。<br>月額費用で終わらせず、会社に残る運用資産をつくります。</p>
+    <div class="plans">
+      <div class="plan q">
+        <div class="pbar serif">内製化ロードマップ作成</div>
+        <div class="pbody">
+          <p class="price"><span class="y">月額</span> <span class="n">200,000</span><span class="y">円〜</span></p>
+          <p class="pperiod">まず現状を整理したい方へ</p>
+          <p class="pdesc">まず現状を整理し、どこから整えるべきかを明確にするプラン。</p>
+        </div>
+      </div>
+      <div class="plan s feat">
+        <div class="badge">おすすめ</div>
+        <div class="pbar serif">内製化スタンダード</div>
+        <div class="pbody">
+          <p class="price"><span class="y">月額</span> <span class="n">350,000</span><span class="y">円〜</span></p>
+          <p class="pperiod">まとめて任せたい方へ</p>
+          <p class="pdesc">属人化した業務を、社内で回る運用に整えるプラン。</p>
+        </div>
+      </div>
+      <div class="plan p">
+        <div class="pbar serif">バックオフィス構築伴走</div>
+        <div class="pbody">
+          <p class="price"><span class="y">月額</span> <span class="n">500,000</span><span class="y">円〜</span></p>
+          <p class="pperiod">体制ごと整えたい方へ</p>
+          <p class="pdesc">採用・労務・経理など複数領域を、体制ごと整えるプラン。</p>
+        </div>
+      </div>
+    </div>
+    <p class="plans-note">事業規模・業務量・体制に合わせて、オーダーメイドでご提案します。<br><a href="price.html" style="color:var(--sage-ink)">料金プランの詳細を見る →</a></p>
+  </div>
+</section>
+
 <!-- 支援の流れ -->
-<section class="paper" id="flow">
+<section class="alt" id="flow">
   <div class="wrap">
     <div class="sec-head">
       <span class="en script">Flow</span>
@@ -1003,6 +1241,31 @@
         <div class="ring"><svg viewBox="0 0 30 30"><path d="M15 4l3 7 7 .5-5.5 4.5 2 7L15 24l-6.5 6 2-7L5 11.5 12 11z"/></svg></div>
         <div class="sn">STEP 6</div><h3>さらに効率化へ</h3><p>変化や成長に合わせ、仕組みや改善をサポート。</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- 代表プロフィール -->
+<section class="paper" id="profile">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en script">Profile</span>
+      <h2 class="serif">整っていない現場に入るのが、得意です。</h2>
+    </div>
+    <div class="profile">
+      <div class="pphoto"><img src="img/profile.jpg" alt="Grace Rin 代表 山中杏澄美"></div>
+      <div class="pinfo">
+        <div class="prole">Grace Rin 代表</div>
+        <div class="pname">山中 杏澄美<span>Azumi Yamanaka</span></div>
+        <p class="pbio">はじめまして。Grace Rinの山中杏澄美です。</p>
+        <p class="pbio">これまで、ブライダル業界での進行管理、法律事務所での総務・採用・秘書業務、人材領域でのRPO・採用支援など、複数の業界・業務を横断してきました。</p>
+        <p class="pbio">どの現場でも共通していたのは、<b>「業務が人に紐づいている」「判断基準が頭の中にある」「忙しい人ほど、細かい確認に追われている」</b>という課題です。</p>
+        <p class="pbio">私が得意なのは、そうしたまだ整いきっていない現場に入り、状況を早く把握し、必要な業務から順に仕組み化していくこと。初めての業務でも抵抗なく入り、関係者の話を聞きながら全体像をつかみ、業務フロー・チェックリスト・判断基準・マニュアルに落とし込んでいきます。</p>
+        <p class="pbio">「この人なら、よく分からない状態でも一緒に整理してくれそう」——そう感じていただける伴走者でありたいと思っています。</p>
+      </div>
+    </div>
+    <div class="pquote">
+      <p>これまでご一緒した方からは、<b>「キャッチアップが早い」「業務範囲が広い」「初めての業務にも抵抗なく入ってくれる」</b>と評価いただくことが多くあります。Grace Rinでは、この対応力を活かし、社長や担当者の頭の中にある業務を整理し、社内で再現できる運用へ落とし込んでいきます。</p>
     </div>
   </div>
 </section>
@@ -1047,9 +1310,9 @@
 <section class="cta" id="cta-band" style="padding:0">
   <div class="pane pleft"></div>
   <div class="center">
-    <h2 class="serif">会社を大きくするための<br>土台づくり、始めませんか?</h2>
-    <p>まずは、現状のシンプルなご相談から大歓迎です。<br>今の一歩が、変化と未来を創ります。</p>
-    <a class="btn" href="#contact">無料相談を予約する <span>→</span></a>
+    <h2 class="serif">社長が毎回確認しなくても、<br>社内で業務が進む状態をつくりませんか。</h2>
+    <p>事務に追われる時間を、売上・採用・組織づくりに戻しませんか。<br>まずは30分の無料相談から。気軽なご相談だけでも歓迎です。</p>
+    <a class="btn" href="#contact">自社に合う内製化プランを相談する <span>→</span></a>
   </div>
   <div class="pane pright"></div>
 </section>
