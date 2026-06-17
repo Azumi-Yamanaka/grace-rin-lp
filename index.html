@@ -527,6 +527,11 @@
   .pquote{background:var(--ivory-2);border-radius:10px;padding:24px 28px;margin:30px auto 0;max-width:840px}
   .pquote p{font-size:13px;color:var(--ink-soft);line-height:2.05}
   .pquote b{color:var(--sage-ink);font-weight:600}
+  /* プロフィール強調語の手書き風下線 */
+  .profile .pbio b, .pquote b{
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='6'%3E%3Cpath d='M1 4 C 14 2, 26 5, 38 3.2 S 56 2, 63 4' fill='none' stroke='%236f7d61' stroke-width='1.5' stroke-linecap='round' stroke-opacity='0.55'/%3E%3C/svg%3E");
+    background-repeat:repeat-x;background-position:0 100%;background-size:64px 6px;
+    padding-bottom:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
   /* 最初の1ヶ月 画像レイアウト */
   .month1-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:34px;align-items:stretch;max-width:960px;margin:0 auto}
   .month1-photo{border-radius:14px;overflow:hidden;min-height:380px;box-shadow:0 16px 38px rgba(143,162,134,.2)}
