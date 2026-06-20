@@ -88,9 +88,9 @@
 
   /* 見出し */
   .sec-head{text-align:center;margin-bottom:54px}
-  .sec-head .en{display:inline-block;font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Yu Gothic",sans-serif;font-style:normal;
-    text-transform:uppercase;border:1px solid var(--sage);color:var(--sage-ink);
-    font-size:11px;letter-spacing:.18em;padding:7px 18px;border-radius:999px;margin-bottom:18px;font-weight:600}
+  .sec-head .en{display:inline-block;font-family:-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-style:normal;
+    text-transform:uppercase;color:var(--gold);
+    font-size:11px;letter-spacing:.3em;margin-bottom:14px;font-weight:600}
   .sec-head h2{font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Yu Gothic",sans-serif;font-weight:500;font-size:27px;
                letter-spacing:.08em;color:var(--ink);line-height:1.6}
   .sec-head p{color:var(--ink-soft);font-size:14px;margin-top:14px;letter-spacing:.04em}
@@ -527,6 +527,32 @@
   .pquote{background:var(--ivory-2);border-radius:10px;padding:24px 28px;margin:30px auto 0;max-width:840px}
   .pquote p{font-size:13px;color:var(--ink-soft);line-height:2.05}
   .pquote b{color:var(--sage-ink);font-weight:600}
+  /* サービスカード(Resilient風・大きな番号) */
+  .scards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1020px;margin:0 auto}
+  .scard{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:38px 32px 34px;position:relative;transition:transform .2s,box-shadow .2s}
+  .scard:hover{box-shadow:0 16px 38px rgba(143,162,134,.18);transform:translateY(-3px)}
+  .scard .sno{display:block;font-family:-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:44px;font-weight:700;color:var(--gold-pale);line-height:1;letter-spacing:.02em;margin-bottom:18px}
+  .scard h3{font-size:17px;font-weight:700;color:var(--ink);margin-bottom:14px;letter-spacing:.03em;line-height:1.55}
+  .scard p{font-size:13px;color:var(--ink-soft);line-height:1.95}
+  .scard .stags{margin-top:16px;display:flex;flex-wrap:wrap;gap:7px}
+  .scard .stags span{font-size:11px;color:var(--sage-ink);border:1px solid var(--line);border-radius:999px;padding:4px 11px;background:var(--ivory)}
+  /* GOAL(思想)セクション */
+  .goalsec{background:linear-gradient(140deg,var(--sage-deep) 0%,var(--olive) 70%,var(--sage-2) 130%);position:relative;overflow:hidden}
+  .goalsec::before{content:"";position:absolute;right:-90px;top:-90px;width:320px;height:320px;border-radius:50%;background:rgba(217,190,126,.1);pointer-events:none}
+  .goal-inner{display:grid;grid-template-columns:1.08fr .92fr;gap:50px;align-items:center;max-width:1000px;margin:0 auto;position:relative;z-index:1}
+  .goal-tx .en{display:inline-block;font-family:-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;text-transform:uppercase;color:var(--gold-pale);font-size:11px;letter-spacing:.3em;margin-bottom:16px;font-weight:600}
+  .goal-tx h2{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;color:#fff;font-size:29px;line-height:1.6;letter-spacing:.05em;font-weight:600;margin-bottom:22px}
+  .goal-tx h2 u{text-decoration:none;background-image:linear-gradient(transparent 62%,rgba(217,190,126,.45) 62%)}
+  .goal-tx p{color:rgba(246,241,231,.88);font-size:14px;line-height:2.05}
+  .goal-illust{display:flex;align-items:center;justify-content:center}
+  .goal-illust svg{width:100%;max-width:320px;height:auto}
+  .goal-tx p b{color:#fff;font-weight:600}
+  /* ヒーロー見出しの強弱 */
+  .hero h1 .l1{display:block;font-size:.62em;font-weight:400;letter-spacing:.04em;color:var(--ink-soft);margin-bottom:2px}
+  .hero h1 .l2{display:block;font-weight:700;letter-spacing:.03em}
+  .hero h1 .em{color:var(--olive)}
+  .hero h1 .em2{color:var(--gold)}
+  .hero .sub-lead{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;font-size:13px;color:var(--sage-ink);font-weight:600;letter-spacing:.06em;margin-top:18px;line-height:1.8}
   /* プロフィール強調語の手描き風下線(まっすぐ寄り) */
   .profile .pbio b, .pquote b{
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='6' preserveAspectRatio='none'%3E%3Cpath d='M1 3.9 C 60 3.5, 120 4.2, 199 3.7' fill='none' stroke='%236f7d61' stroke-width='1.6' stroke-linecap='round' stroke-opacity='0.6'/%3E%3C/svg%3E");
@@ -582,6 +608,11 @@
     .month1-layout{grid-template-columns:1fr;gap:18px}
     .month1-photo{min-height:240px}
     .month1-layout .month1-grid{padding:24px 22px}
+    .scards{grid-template-columns:1fr;max-width:440px}
+    .goal-inner{grid-template-columns:1fr;gap:30px}
+    .goal-illust{order:-1}
+    .goal-illust svg{max-width:240px}
+    .goal-tx h2{font-size:23px}
     .db-wrap{padding:44px 0}
     .diagbanner{flex-wrap:wrap;justify-content:center;text-align:center;padding:32px 24px;gap:18px}
     .db-deco,.db-div,.db-stamp{display:none}
@@ -657,8 +688,8 @@
       </div>
     </div>
     <nav class="nav">
-      <a class="nlink" href="#service"><span class="en">Services</span><span class="ja">サービスについて</span></a>
-      <a class="nlink" href="#domains"><span class="en">Scope</span><span class="ja">支援できる領域</span></a>
+      <a class="nlink" href="#service"><span class="en">Service</span><span class="ja">サービス</span></a>
+      <a class="nlink" href="#reasons"><span class="en">Reasons</span><span class="ja">選ばれる理由</span></a>
       <a class="nlink" href="#price"><span class="en">Pricing</span><span class="ja">料金プラン</span></a>
       <a class="nlink" href="about.html"><span class="en">About</span><span class="ja">Grace Rinについて</span></a>
       <a class="nlink" href="#faq"><span class="en">FAQ</span><span class="ja">よくあるご質問</span></a>
@@ -674,14 +705,16 @@
     <div class="hero-inner">
       <div class="hero-copy">
         <div class="hero-kw"><span class="t">社員数名〜30名規模の会社へ</span></div>
-        <h1 class="serif">社長が抱えている事務・採用・請求業務を、<br>社内で回る<span class="accent">仕組み</span>に変える。</h1>
-        <div class="hero-kw" style="margin-top:14px"><span class="t">“代行”ではなく、<span class="u">内製化ディレクション</span>。</span></div>
-        <p class="sub">Grace Rinは、総務・経理・採用まわりの業務を整理し、<br>AIやツールも活用しながら、会社に残る運用をつくります。</p>
-        <p class="sub" style="margin-top:10px">初めての業務にも抵抗なく入り、<br>状況整理から運用設計まで伴走します。</p>
+        <h1 class="serif">
+          <span class="l1">社内の<span class="em">カオス</span>を、</span>
+          <span class="l2">社長が手放せる<span class="em2">仕組み</span>に変える。</span>
+        </h1>
+        <p class="sub">事務・採用・請求・社内確認が社長に集まり続ける状態から、<br>社内で回るバックオフィスへ整えます。</p>
+        <p class="sub-lead">代行ではなく、内製化。作業者ではなく、伴走者として入ります。</p>
       </div>
       <div class="hero-cta">
-        <a class="btn-outline" href="check.html">課題を診断する<span class="circ">→</span></a>
-        <a class="btn btn-main" href="#contact">まずは30分、無料で相談する<span class="circ">→</span></a>
+        <a class="btn btn-main" href="#contact">30分で、手放せる業務を相談する<span class="circ">→</span></a>
+        <a class="btn-outline" href="#service">サービスを見る<span class="circ">→</span></a>
       </div>
     </div>
   </div>
@@ -691,7 +724,7 @@
 <section class="alt" id="stance">
   <div class="wrap">
     <div class="sec-head">
-      <span class="en script">Our stance</span>
+      <span class="en">Concept</span>
       <h2 class="serif">代行ではなく、内製化。<br>作業者ではなく、伴走者。</h2>
     </div>
     <div class="stance">
@@ -704,9 +737,10 @@
 </section>
 
 <!-- 課題共感 -->
-<section class="paper" id="service" style="padding:0">
+<section class="paper" id="pain" style="padding:0">
   <div class="worry-band">
     <div class="worry-inner">
+      <span style="display:block;font-family:-apple-system,'Segoe UI',sans-serif;text-transform:uppercase;color:var(--gold);font-size:11px;letter-spacing:.3em;font-weight:600;margin-bottom:12px">Pain Points</span>
       <h2 class="bar-head serif">事業は伸びているのに、<br>社長の手元に“細かい仕事”が残り続けていませんか?</h2>
       <ul class="worry-list">
         <li>請求・支払い・契約まわりを、いまも社長が見ている</li>
@@ -759,90 +793,31 @@
 </section>
 
 <!-- Grace Rinが整える4つのこと -->
-<section class="alt" id="pillars">
+<section class="alt" id="service">
   <div class="wrap">
     <div class="sec-head">
-      <span class="en script">What we do</span>
-      <h2 class="serif">Grace Rinができること</h2>
-      <p>業務を見える化し、社内で回る仕組みに変える</p>
+      <span class="en">Service</span>
+      <h2 class="serif">Grace Rinのサービス</h2>
+      <p>社内のカオスを、社内で回る仕組みに変える3つの支援。</p>
     </div>
-    <div class="pillars-deco">
-      <svg width="64" height="18" viewBox="0 0 64 18" fill="none" stroke="#c9a44a" stroke-width="1" stroke-linecap="round">
-        <line x1="2" y1="9" x2="24" y2="9" opacity=".55"/><line x1="40" y1="9" x2="62" y2="9" opacity=".55"/>
-        <path d="M32 16V4"/><path d="M32 10c-3-1-5-2.6-5.6-4.8 2.4.2 4.2 1.5 5.6 3.4"/><path d="M32 10c3-1 5-2.6 5.6-4.8-2.4.2-4.2 1.5-5.6 3.4"/>
-        <circle cx="32" cy="3.6" r="1.4" fill="#c9a44a" stroke="none"/>
-      </svg>
-    </div>
-    <div class="pillars">
-      <div class="pcard">
-        <div class="pcard-top">
-          <div class="pcard-tt"><span class="pno">01</span><h3>業務の見える化</h3></div>
-          <div class="pillus">
-            <svg viewBox="0 0 48 48" fill="none" stroke="#5e6e57" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="11" y="9" width="21" height="29" rx="3" fill="#fff"/>
-              <rect x="16.5" y="6" width="10" height="6" rx="2" fill="#efe8da"/>
-              <path d="M16 18h11M16 23.5h11M16 29h7" stroke="#8fa286"/>
-              <circle cx="31.5" cy="31" r="7.5" fill="#fff"/>
-              <path d="M28 31l2.3 2.3 4.3-4.6" stroke="#c9a44a" stroke-width="1.7"/>
-              <path d="M37 36.5l4.4 4.4" stroke-width="1.9"/>
-              <path d="M7 41c1.6-2.7 4.3-3 7-2-.9 2.8-3.8 3.8-7 2z" fill="#a9b8a0" stroke="none"/>
-            </svg>
-          </div>
-        </div>
-        <p>社長や担当者の頭の中にある業務を洗い出し、<b>抜け漏れ・重複・属人化</b>を整理します。</p>
+    <div class="scards">
+      <div class="scard">
+        <span class="sno">01</span>
+        <h3>バックオフィス<br>内製化ディレクション</h3>
+        <p>社長や担当者の頭の中にある業務を棚卸しし、フロー・判断基準・チェックリスト・管理表へ落とし込みます。</p>
+        <div class="stags"><span>総務</span><span>経理</span><span>契約</span><span>月次管理</span></div>
       </div>
-      <div class="pcard">
-        <div class="pcard-top">
-          <div class="pcard-tt"><span class="pno">02</span><h3>運用の仕組み化</h3></div>
-          <div class="pillus">
-            <svg viewBox="0 0 48 48" fill="none" stroke="#5e6e57" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="5" y="8" width="13" height="9" rx="2.5" fill="#efe8da"/>
-              <rect x="30" y="8" width="13" height="9" rx="2.5" fill="#fff"/>
-              <rect x="17.5" y="30" width="13" height="9" rx="2.5" fill="#fff"/>
-              <path d="M18 12.5h12"/>
-              <path d="M36.5 17v6c0 1.7-1.3 3-3 3h-2.5"/>
-              <path d="M32 23.5l-2.5 2.5 2.5 2.5" stroke="#c9a44a"/>
-              <circle cx="9" cy="30.5" r="4.4" fill="#a9b8a0" stroke="none"/><circle cx="9" cy="30.5" r="1.7" fill="#fff" stroke="none"/>
-              <path d="M2.5 41.5c1.6-2.7 4.3-3 7-2-.9 2.8-3.8 3.8-7 2z" fill="#a9b8a0" stroke="none"/>
-            </svg>
-          </div>
-        </div>
-        <p>請求・採用・勤怠・資料管理などを、<b>誰が見ても回せる</b>フロー・マニュアルに整えます。</p>
+      <div class="scard">
+        <span class="sno">02</span>
+        <h3>採用・社内運用<br>サポート</h3>
+        <p>求人票、スカウト文、候補者管理、入社対応など、採用まわりの業務を社内で回る形に整えます。</p>
+        <div class="stags"><span>求人票</span><span>スカウト</span><span>候補者管理</span><span>入社対応</span></div>
       </div>
-      <div class="pcard">
-        <div class="pcard-top">
-          <div class="pcard-tt"><span class="pno">03</span><h3>AI・ツール活用による効率化</h3></div>
-          <div class="pillus">
-            <svg viewBox="0 0 48 48" fill="none" stroke="#5e6e57" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="9" y="13" width="23" height="15" rx="2" fill="#efe8da"/>
-              <path d="M6 32h29l-2.2-3.5H8.2z" fill="#fff"/>
-              <path d="M20.5 16.5l1.4 3.3 3.3 1.4-3.3 1.4-1.4 3.3-1.4-3.3-3.3-1.4 3.3-1.4z" fill="#c9a44a" stroke="none"/>
-              <circle cx="38" cy="12" r="4.6" fill="#a9b8a0" stroke="none"/>
-              <circle cx="41" cy="23.5" r="3" fill="#efe8da"/>
-              <path d="M34.5 14.5l3.5 6.5" stroke="#8fa286" stroke-width="1.1" stroke-dasharray="1.6 2"/>
-              <path d="M2.5 41.5c1.6-2.7 4.3-3 7-2-.9 2.8-3.8 3.8-7 2z" fill="#a9b8a0" stroke="none"/>
-            </svg>
-          </div>
-        </div>
-        <p>ChatGPT・Claude Code・Notion・Google Workspace・freee・Canva などを活用し、繰り返し作業や確認作業を削減。現場に馴染む、<b>無理なく使える効率化</b>を整えます。</p>
-      </div>
-      <div class="pcard">
-        <div class="pcard-top">
-          <div class="pcard-tt"><span class="pno">04</span><h3>社内定着サポート</h3></div>
-          <div class="pillus">
-            <svg viewBox="0 0 48 48" fill="none" stroke="#5e6e57" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="24" cy="13" r="5" fill="#efe8da"/>
-              <path d="M15 29c0-5 4-8 9-8s9 3 9 8" fill="#fff"/>
-              <circle cx="10" cy="19" r="3.6" fill="#a9b8a0" stroke="none"/>
-              <path d="M4 31c0-3.6 2.7-5.6 6-5.6" stroke="#8fa286" stroke-width="1.3"/>
-              <circle cx="38" cy="19" r="3.6" fill="#a9b8a0" stroke="none"/>
-              <path d="M44 31c0-3.6-2.7-5.6-6-5.6" stroke="#8fa286" stroke-width="1.3"/>
-              <path d="M24 42v-5.5M24 38c-2.2-.8-3.4-2.6-3.4-4.8 2.2.2 3.4 1.6 3.4 3.4M24 38c2.2-.8 3.4-2.6 3.4-4.8-2.2.2-3.4 1.6-3.4 3.4" stroke="#8fa286" stroke-width="1.2"/>
-              <circle cx="24" cy="5" r="1.5" fill="#c9a44a" stroke="none"/>
-            </svg>
-          </div>
-        </div>
-        <p>外注で終わらせず、<b>社内の人が迷わず動ける状態</b>まで伴走します。</p>
+      <div class="scard">
+        <span class="sno">03</span>
+        <h3>AI・ツール<br>活用定着支援</h3>
+        <p>ChatGPT、Google Workspace、freee、Notion などを、現場で使える運用に落とし込みます。</p>
+        <div class="stags"><span>ChatGPT</span><span>Notion</span><span>freee</span><span>Google</span></div>
       </div>
     </div>
   </div>
@@ -852,7 +827,7 @@
 <section class="paper" id="reasons">
   <div class="wrap">
     <div class="sec-head">
-      <span class="en script">Why Grace Rin</span>
+      <span class="en">Why Grace Rin</span>
       <h2 class="serif">Grace Rinが選ばれる理由</h2>
       <p>まだ整いきっていない現場に入り、状況を早く理解し、<br>必要な業務から順に形にしていくことが得意です。</p>
     </div>
@@ -900,7 +875,7 @@
 <section class="paper" id="deliverables">
   <div class="wrap">
     <div class="sec-head">
-      <span class="en script">What we leave</span>
+      <span class="en">Before / After</span>
       <h2 class="serif">会社に残る運用資産をつくる</h2>
       <p>Grace Rinがつくるのは、単なるマニュアルではありません。<br>担当者が迷わず動けるように、実際の運用に合わせて整えます。</p>
     </div>
@@ -980,60 +955,12 @@
   </div>
 </section>
 
-<!-- 支援領域 -->
-<section class="alt" id="domains">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="en script">Coverage</span>
-      <h2 class="serif">支援領域</h2>
-    </div>
-    <p class="domain-axis">主軸は、<b>社長の手元にあるバックオフィス業務の整理・内製化</b>です。<br>幅広く対応しますが、すべては「社内で回る仕組みづくり」につながっています。</p>
-    <div class="domains">
-      <div class="tcard">
-        <div class="th">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#5e6e57" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 12h6M9 16h4"/></svg>
-          <h3>経営事務まわり</h3>
-        </div>
-        <ul>
-          <li>請求</li><li>支払い</li><li>契約</li><li>月次タスク</li><li>士業連携</li>
-        </ul>
-      </div>
-      <div class="tcard">
-        <div class="th">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#5e6e57" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
-          <h3>採用・人まわり</h3>
-        </div>
-        <ul>
-          <li>求人票</li><li>スカウト文</li><li>候補者管理</li><li>入社手続き</li>
-        </ul>
-      </div>
-      <div class="tcard">
-        <div class="th">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#5e6e57" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 13l2 2 4-4"/></svg>
-          <h3>社内運用まわり</h3>
-        </div>
-        <ul>
-          <li>マニュアル</li><li>判断基準</li><li>チェックリスト</li><li>フォルダ整理</li>
-        </ul>
-      </div>
-      <div class="tcard">
-        <div class="th">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#5e6e57" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9l-4.7 1.3L12 15l-1.8-4.7L5.5 9l4.7-1.3z"/><circle cx="18" cy="17.5" r="2"/></svg>
-          <h3>AI・ツール活用</h3>
-        </div>
-        <ul>
-          <li>ChatGPT</li><li>Notion</li><li>Google Workspace</li><li>freee など</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- 最初の1ヶ月でやること -->
 <section class="paper" id="month1">
   <div class="wrap">
     <div class="sec-head">
-      <span class="en script">First month</span>
+      <span class="en">First month</span>
       <h2 class="serif">最初の1ヶ月で、社長の手元にある業務を見える化します。</h2>
     </div>
     <div class="month1-layout">
@@ -1060,7 +987,7 @@
 <section class="alt" id="fit">
   <div class="wrap">
     <div class="sec-head">
-      <span class="en script">Good fit</span>
+      <span class="en">Good fit</span>
       <h2 class="serif">Grace Rinが合う会社／合いにくい会社</h2>
       <p>合う・合わないがあるからこそ、相性の良い形でご一緒したいと考えています。</p>
     </div>
@@ -1121,11 +1048,37 @@
   </div>
 </section>
 
+<!-- GOAL(思想) -->
+<section class="goalsec" id="goal">
+  <div class="wrap">
+    <div class="goal-inner">
+      <div class="goal-tx">
+        <span class="en">Goal</span>
+        <h2>社長の時間を、<br>事務ではなく<u>売上づくり</u>へ。</h2>
+        <p>Grace Rinが目指すのは、業務をきれいにすること自体ではありません。社長が日々の細かな確認や属人的な業務から少しずつ離れ、本来向き合うべき<b>売上づくり・事業づくり</b>に集中できる状態をつくることです。</p>
+      </div>
+      <div class="goal-illust">
+        <svg viewBox="0 0 300 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="212" cy="74" r="46" stroke="#e7d6ab" stroke-width="1.1" opacity=".65"/>
+          <circle cx="212" cy="74" r="29" fill="#d9be7e" opacity=".22"/>
+          <path d="M36 196 L 86 168 L 124 182 L 174 126 L 228 88" stroke="#e7d6ab" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="228" cy="88" r="4.2" fill="#e7d6ab"/>
+          <circle cx="92" cy="118" r="13" stroke="#fff" stroke-width="1.6"/>
+          <path d="M70 176 C 70 150, 82 138, 92 138 C 102 138, 114 150, 114 176" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="28" y1="200" x2="272" y2="200" stroke="#fff" stroke-width="1.1" opacity=".55"/>
+          <path d="M250 200 C 247 184, 257 177, 254 166 M250 200 C 253 187, 243 181, 246 172" stroke="#fff" stroke-width="1.3" stroke-linecap="round" opacity=".75"/>
+          <path d="M243 200 h 18" stroke="#fff" stroke-width="1.1" opacity=".55"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 料金プラン -->
 <section class="paper" id="price">
   <div class="wrap">
     <div class="sec-head">
-      <span class="en script">Price</span>
+      <span class="en">Pricing</span>
       <h2 class="serif">料金プラン</h2>
     </div>
     <p class="price-intro">Grace Rinの料金は、単純な作業時間に対する費用ではありません。<br><b>業務の棚卸し・運用設計・判断基準づくり・マニュアル化・社内定着</b>まで含めた、内製化支援の費用です。<br>月額費用で終わらせず、会社に残る運用資産をつくります。</p>
@@ -1164,7 +1117,7 @@
 <section class="alt" id="flow">
   <div class="wrap">
     <div class="sec-head">
-      <span class="en script">Flow</span>
+      <span class="en">Flow</span>
       <h2 class="serif">支援の流れ</h2>
     </div>
     <p class="flow-sub">オンラインで完結｜<b>最短1週間</b>で業務改善に着手できます</p>
@@ -1210,7 +1163,7 @@
 <section class="paper" id="profile">
   <div class="wrap">
     <div class="sec-head">
-      <span class="en script">Profile</span>
+      <span class="en">Profile</span>
       <h2 class="serif">整っていない現場に入るのが、得意です。</h2>
     </div>
     <div class="profile">
@@ -1237,7 +1190,7 @@
 <section class="alt" id="faq">
   <div class="wrap">
     <div class="sec-head">
-      <span class="en script">FAQ</span>
+      <span class="en">FAQ</span>
       <h2 class="serif">よくあるご質問</h2>
     </div>
     <div class="faqs">
@@ -1284,7 +1237,7 @@
 <section class="paper" id="contact">
   <div class="wrap">
     <div class="sec-head">
-      <span class="en script">Contact</span>
+      <span class="en">Contact</span>
       <h2 class="serif">お問い合わせ・ご相談</h2>
       <p>30分ほどの無料相談から。まずはお気軽にどうぞ。</p>
     </div>
