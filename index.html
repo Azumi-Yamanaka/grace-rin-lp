@@ -536,6 +536,15 @@
   .scard p{font-size:13px;color:var(--ink-soft);line-height:1.95}
   .scard .stags{margin-top:16px;display:flex;flex-wrap:wrap;gap:7px}
   .scard .stags span{font-size:11px;color:var(--sage-ink);border:1px solid var(--line);border-radius:999px;padding:4px 11px;background:var(--ivory)}
+  /* お悩み3カード */
+  .paincards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1020px;margin:0 auto}
+  .paincard{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:30px 28px;border-top:3px solid var(--sage)}
+  .paincard h3{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:14px;letter-spacing:.02em;line-height:1.5;padding-bottom:14px;border-bottom:1px solid var(--line)}
+  .paincard ul{list-style:none}
+  .paincard li{position:relative;padding:9px 0 9px 20px;font-size:12.5px;color:var(--ink-soft);line-height:1.8}
+  .paincard li::before{content:"";position:absolute;left:2px;top:15px;width:7px;height:7px;border-radius:50%;background:var(--sage);opacity:.65}
+  .pain-note{text-align:center;font-size:13.5px;color:var(--ink-soft);line-height:2.05;margin-top:38px;max-width:780px;margin-left:auto;margin-right:auto}
+  .pain-note b{color:var(--sage-ink);font-weight:600}
   /* GOAL(思想)セクション */
   .goalsec{background:linear-gradient(140deg,var(--sage-deep) 0%,var(--olive) 70%,var(--sage-2) 130%);position:relative;overflow:hidden}
   .goalsec::before{content:"";position:absolute;right:-90px;top:-90px;width:320px;height:320px;border-radius:50%;background:rgba(217,190,126,.1);pointer-events:none}
@@ -609,6 +618,7 @@
     .month1-photo{min-height:240px}
     .month1-layout .month1-grid{padding:24px 22px}
     .scards{grid-template-columns:1fr;max-width:440px}
+    .paincards{grid-template-columns:1fr;max-width:440px}
     .goal-inner{grid-template-columns:1fr;gap:30px}
     .goal-illust{order:-1}
     .goal-illust svg{max-width:240px}
@@ -737,20 +747,39 @@
 </section>
 
 <!-- 課題共感 -->
-<section class="paper" id="pain" style="padding:0">
-  <div class="worry-band">
-    <div class="worry-inner">
-      <span style="display:block;font-family:-apple-system,'Segoe UI',sans-serif;text-transform:uppercase;color:var(--gold);font-size:11px;letter-spacing:.3em;font-weight:600;margin-bottom:12px">Pain Points</span>
-      <h2 class="bar-head serif">事業は伸びているのに、<br>社長の手元に“細かい仕事”が残り続けていませんか?</h2>
-      <ul class="worry-list">
-        <li>請求・支払い・契約まわりを、いまも社長が見ている</li>
-        <li>採用や求人対応が、いつも後回しになっている</li>
-        <li>Slackやチャットで、毎回「これどうしますか?」と聞かれる</li>
-        <li>判断基準がなく、結局すべてが社長確認になってしまう</li>
-        <li>業務が人に紐づいていて、誰かに引き継げない</li>
-        <li>AIやツールを入れても、現場で定着していない</li>
-      </ul>
+<section class="alt" id="pain">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">Pain Points</span>
+      <h2 class="serif">整っていない現場で、<br>こんなことが起きていませんか?</h2>
     </div>
+    <div class="paincards">
+      <div class="paincard">
+        <h3>社長に確認が集中している</h3>
+        <ul>
+          <li>気づけば、社長が最終確認者になっている</li>
+          <li>Slackやチャットで、細かい確認が社長に集まり続けている</li>
+          <li>社長自身も、何から手放せるのか分からない</li>
+        </ul>
+      </div>
+      <div class="paincard">
+        <h3>業務が人に紐づいている</h3>
+        <ul>
+          <li>担当者ごとにやり方が違い、引き継ぎができない</li>
+          <li>誰かが休むと、業務の場所や進め方が分からなくなる</li>
+          <li>新しい人を入れても、教える側が忙しくて定着しない</li>
+        </ul>
+      </div>
+      <div class="paincard">
+        <h3>ルールがなく、その場対応で回っている</h3>
+        <ul>
+          <li>請求、採用、契約、労務などが頭の中や個人管理で回っている</li>
+          <li>業務が増えるたびに、ルールではなく“その場対応”で乗り切っている</li>
+          <li>ツールは入っているのに、結局スプレッドシートと口頭確認に戻っている</li>
+        </ul>
+      </div>
+    </div>
+    <p class="pain-note">ひとつひとつは小さな確認や作業でも、積み重なると、社長や担当者の時間を大きく奪います。<br>Grace Rinは、こうした少し“<b>カオス</b>”な状態から入り、業務を見える化し、社内で回る形へ整えていきます。</p>
   </div>
 </section>
 
@@ -1055,19 +1084,27 @@
       <div class="goal-tx">
         <span class="en">Goal</span>
         <h2>社長の時間を、<br>事務ではなく<u>売上づくり</u>へ。</h2>
-        <p>Grace Rinが目指すのは、業務をきれいにすること自体ではありません。社長が日々の細かな確認や属人的な業務から少しずつ離れ、本来向き合うべき<b>売上づくり・事業づくり</b>に集中できる状態をつくることです。</p>
+        <p>Grace Rinが目指すのは、業務をきれいにすること自体ではありません。社長が日々の細かな確認や属人的な業務から少しずつ離れ、本来向き合うべき<b>「売上をつくる仕事」</b>に集中できる状態をつくることです。</p>
       </div>
       <div class="goal-illust">
         <svg viewBox="0 0 300 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="212" cy="74" r="46" stroke="#e7d6ab" stroke-width="1.1" opacity=".65"/>
-          <circle cx="212" cy="74" r="29" fill="#d9be7e" opacity=".22"/>
-          <path d="M36 196 L 86 168 L 124 182 L 174 126 L 228 88" stroke="#e7d6ab" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="228" cy="88" r="4.2" fill="#e7d6ab"/>
-          <circle cx="92" cy="118" r="13" stroke="#fff" stroke-width="1.6"/>
-          <path d="M70 176 C 70 150, 82 138, 92 138 C 102 138, 114 150, 114 176" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
-          <line x1="28" y1="200" x2="272" y2="200" stroke="#fff" stroke-width="1.1" opacity=".55"/>
-          <path d="M250 200 C 247 184, 257 177, 254 166 M250 200 C 253 187, 243 181, 246 172" stroke="#fff" stroke-width="1.3" stroke-linecap="round" opacity=".75"/>
-          <path d="M243 200 h 18" stroke="#fff" stroke-width="1.1" opacity=".55"/>
+          <circle cx="150" cy="72" r="50" stroke="#e7d6ab" stroke-width="1.1" opacity=".5"/>
+          <circle cx="150" cy="72" r="31" fill="#d9be7e" opacity=".2"/>
+          <g stroke="#e7d6ab" stroke-width="1.5" stroke-linecap="round" opacity=".75">
+            <path d="M150 7 v 12"/>
+            <path d="M212 17 l -7 10"/>
+            <path d="M88 17 l 7 10"/>
+            <path d="M227 72 h -12"/>
+            <path d="M73 72 h 12"/>
+            <path d="M205 120 l -9 -8"/>
+            <path d="M95 120 l 9 -8"/>
+          </g>
+          <circle cx="150" cy="140" r="14" stroke="#fff" stroke-width="1.7"/>
+          <path d="M150 154 L 150 191" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M150 162 L 123 127 M150 162 L 177 127" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M150 191 L 133 217 M150 191 L 167 217" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
+          <line x1="46" y1="217" x2="254" y2="217" stroke="#fff" stroke-width="1.1" opacity=".5"/>
+          <path d="M232 217 C 229 202 239 195 236 185 M232 217 C 235 204 225 198 228 189" stroke="#fff" stroke-width="1.3" stroke-linecap="round" opacity=".7"/>
         </svg>
       </div>
     </div>
