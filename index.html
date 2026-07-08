@@ -116,8 +116,11 @@
 
   /* ── ヒーロー ── */
   .hero{min-height:560px;display:flex;align-items:center;overflow:hidden}
-  .hero-bg{position:absolute;inset:0;z-index:0;background:url('img/office.jpg') center 58%/cover no-repeat;
-    transform-origin:center center;animation:kenburns 18s ease-in-out infinite alternate;will-change:transform}
+  .hero-bg{position:absolute;inset:0;z-index:0;background-position:center 55%;background-size:cover;background-repeat:no-repeat;
+    opacity:0;transition:opacity 1.6s ease;transform-origin:center center;animation:kenburns 18s ease-in-out infinite alternate;will-change:transform,opacity}
+  .hero-bg.active{opacity:1}
+  .hero-bg.s1{background-image:url('img/hero-slide1.jpg')}
+  .hero-bg.s2{background-image:url('img/hero-slide2.jpg')}
   @keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.18)}}
   .hero .wrap{padding-top:70px;padding-bottom:70px;z-index:2;width:100%}
   .hero-inner{max-width:600px}
@@ -710,7 +713,8 @@
 
 <!-- ヒーロー -->
 <header class="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg s1 active"></div>
+  <div class="hero-bg s2"></div>
   <div class="wrap">
     <div class="hero-inner">
       <div class="hero-copy">
@@ -1390,6 +1394,20 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
   els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+<!-- ヒーロー背景スライドショー -->
+<script>
+(function(){
+  var slides=document.querySelectorAll('.hero .hero-bg');
+  if(slides.length<2) return;
+  var i=0;
+  setInterval(function(){
+    slides[i].classList.remove('active');
+    i=(i+1)%slides.length;
+    slides[i].classList.add('active');
+  },5000);
 })();
 </script>
 
