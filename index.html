@@ -114,36 +114,35 @@
   .nav a.ncta{background:var(--olive);color:#fff;padding:11px 22px;border-radius:7px;letter-spacing:.06em;margin-left:12px;box-shadow:0 2px 8px rgba(111,125,97,.18)}
   .nav a.ncta:hover{background:var(--olive-d);color:#fff;transform:translateY(-1px);box-shadow:0 7px 16px rgba(111,125,97,.30)}
 
-  /* ── ヒーロー ── */
-  .hero{min-height:560px;display:flex;align-items:center;overflow:hidden}
-  .hero-bg{position:absolute;inset:0;z-index:0;background-position:center 55%;background-size:cover;background-repeat:no-repeat;
+  /* ── ヒーロー(アーチ画像 + 横流れマーキー) ── */
+  .hero{position:relative;overflow:hidden;background:var(--ivory)}
+  .hero .wrap{padding-top:56px;padding-bottom:0;z-index:2;width:100%}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;min-height:480px}
+  .hero-left{max-width:560px}
+  .hero-right{display:flex;justify-content:center;align-items:flex-end;align-self:stretch;padding-top:20px}
+  .hero-arch{position:relative;width:100%;max-width:352px;aspect-ratio:3/4.1;border-radius:176px 176px 20px 20px;overflow:hidden;box-shadow:0 26px 60px rgba(74,70,63,.22);border:6px solid #fff}
+  .hero-bg{position:absolute;inset:0;z-index:0;background-position:center 50%;background-size:cover;background-repeat:no-repeat;
     opacity:0;transition:opacity 1.6s ease;transform-origin:center center;animation:kenburns 18s ease-in-out infinite alternate;will-change:transform,opacity}
   .hero-bg.active{opacity:1}
   .hero-bg.s1{background-image:url('img/hero-slide1.jpg')}
   .hero-bg.s2{background-image:url('img/hero-slide2.jpg')}
-  @keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.18)}}
-  .hero .wrap{padding-top:70px;padding-bottom:70px;z-index:2;width:100%}
-  .hero-inner{max-width:600px}
-  /* コピー背面だけのやわらかいパネル(全面スモークは廃止) */
-  .hero-copy{background:rgba(247,243,234,.8);border:1px solid rgba(255,255,255,.55);border-radius:18px;
-    padding:30px 34px 32px;box-shadow:0 10px 34px rgba(74,70,63,.10);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
-  .hero h1{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;font-size:35px;line-height:1.55;letter-spacing:.05em;color:var(--ink);font-weight:600;margin-bottom:18px}
+  @keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.12)}}
+  .hero h1{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;font-size:38px;line-height:1.5;letter-spacing:.04em;color:var(--ink);font-weight:600;margin-bottom:18px}
   .hero h1 .accent{color:var(--gold)}
-  .hero-cta{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+  .hero-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
   .hero-cta .btn,.hero-cta .btn-outline{padding-left:24px;padding-right:18px;font-size:14px;gap:9px}
-  .hero-cta .btn-outline{background:rgba(255,255,255,.85);box-shadow:0 3px 12px rgba(74,70,63,.10)}
   .hero-cta a .circ{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
     border-radius:50%;border:1px solid currentColor;font-size:11px;line-height:1}
-  .btn-outline{display:inline-flex;align-items:center;background:rgba(255,255,255,.55);color:var(--sage-ink);text-decoration:none;
-    padding:17px 36px;border-radius:5px;font-size:14.5px;letter-spacing:.06em;border:1px solid var(--sage);transition:.2s}
+  .btn-outline{display:inline-flex;align-items:center;background:#fff;color:var(--sage-ink);text-decoration:none;
+    padding:17px 34px;border-radius:5px;font-size:14.5px;letter-spacing:.06em;border:1px solid var(--sage);transition:.2s;box-shadow:0 3px 12px rgba(74,70,63,.08)}
   .btn-outline:hover{background:var(--sage);color:#fff}
-  .hero .sub{margin-top:0;font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;font-size:15.5px;line-height:2;color:var(--ink);font-weight:500;max-width:480px}
-  .hero-feats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:42px;max-width:440px;justify-items:center}
-  .hfeat{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:140px}
-  .hfeat .ic{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.7);border:1px solid var(--sage);
-             display:flex;align-items:center;justify-content:center;margin-bottom:10px}
-  .hfeat .ic svg{width:26px;height:26px;stroke:var(--sage-ink);fill:none;stroke-width:1.4}
-  .hfeat p{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;font-size:11.5px;line-height:1.7;color:var(--ink);font-weight:500;text-shadow:0 0 10px rgba(247,243,234,.95),0 1px 2px rgba(247,243,234,.9)}
+  .hero .sub{margin-top:0;font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;font-size:15px;line-height:1.95;color:var(--ink);font-weight:500;max-width:490px}
+  /* 横流れマーキー */
+  .hero-marquee{margin-top:46px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:15px 0;overflow:hidden;white-space:nowrap;background:var(--ivory-2)}
+  .hero-marquee-inner{display:inline-block;animation:heroMarquee 34s linear infinite;will-change:transform}
+  .hero-marquee-inner span{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;font-size:30px;font-weight:600;letter-spacing:.06em;color:var(--sage);opacity:.55;margin:0 22px;vertical-align:middle}
+  .hero-marquee-inner span.g{color:var(--gold);opacity:.8;font-size:18px}
+  @keyframes heroMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
   /* ── お悩み + 成長基盤 ── */
   .worry-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:start;max-width:880px;margin:0 auto}
@@ -713,11 +712,9 @@
 
 <!-- ヒーロー -->
 <header class="hero">
-  <div class="hero-bg s1 active"></div>
-  <div class="hero-bg s2"></div>
   <div class="wrap">
-    <div class="hero-inner">
-      <div class="hero-copy">
+    <div class="hero-grid">
+      <div class="hero-left">
         <div class="hero-kw"><span class="t">社員数名〜30名規模の会社へ</span></div>
         <h1 class="serif">
           <span class="l1">代行じゃない、</span>
@@ -725,11 +722,22 @@
         </h1>
         <p class="sub">採用・総務・社内運用を、属人化から仕組み化へ。<br>Grace Rinは、成長企業のコーポレート領域を整える内製化ディレクションです。</p>
         <p class="sub-lead">作業者ではなく、伴走者として入ります。</p>
+        <div class="hero-cta">
+          <a class="btn btn-main" href="#contact">30分で、手放せる業務を相談する<span class="circ">→</span></a>
+          <a class="btn-outline" href="#service">サービスを見る<span class="circ">→</span></a>
+        </div>
       </div>
-      <div class="hero-cta">
-        <a class="btn btn-main" href="#contact">30分で、手放せる業務を相談する<span class="circ">→</span></a>
-        <a class="btn-outline" href="#service">サービスを見る<span class="circ">→</span></a>
+      <div class="hero-right">
+        <div class="hero-arch">
+          <div class="hero-bg s1 active"></div>
+          <div class="hero-bg s2"></div>
+        </div>
       </div>
+    </div>
+  </div>
+  <div class="hero-marquee">
+    <div class="hero-marquee-inner">
+      <span>内製化ディレクション</span><span class="g">◆</span><span>属人化から仕組み化へ</span><span class="g">◆</span><span>社内で回るバックオフィス</span><span class="g">◆</span><span>代行じゃない</span><span class="g">◆</span><span>内製化ディレクション</span><span class="g">◆</span><span>属人化から仕組み化へ</span><span class="g">◆</span><span>社内で回るバックオフィス</span><span class="g">◆</span><span>代行じゃない</span><span class="g">◆</span>
     </div>
   </div>
 </header>
