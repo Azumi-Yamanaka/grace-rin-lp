@@ -1,0 +1,174 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ============ 案件・見積 ============
+
+model Project {
+  id           String    @id // 例: Q-2026-0001
+  name         String // 案件名
+  customerName String // 顧客名
+  assignee     String // 担当者
+  dueDate      DateTime? // 希望納期
+  quantity     Int       @default(1) // 数量
+  notes        String? // 備考
+  status       String    @default("新規") // 新規/図面解析中/原価確認/見積作成中/承認待ち/見積提出済/受注/失注
+  drawingPath  String? // 図面PDFの保存パス（uploads/ 配下）
+  drawingName  String? // 元ファイル名
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  analysis  DrawingAnalysis?
+  costItems CostItem[]
+  costLogs  CostAdjustmentLog[]
+  margin    MarginProposal?
+  decisions PriceDecision[]
+  order     OrderResult?
+}
+
+// 図面解析結果: AI の生出力と人間修正後を分けて保持する
+model DrawingAnalysis {
+  id           Int       @id @default(autoincrement())
+  projectId    String    @unique
+  provider     String // mock / gemini / openai
+  aiResultJson String // AI が返した生JSON（編集不可・履歴）
+  editedJson   String? // 人間が修正した最新JSON
+  status       String    @default("AI解析済") // AI解析済 / 確認済
+  analyzedAt   DateTime  @default(now())
+  confirmedBy  String?
+  confirmedAt  DateTime?
+  updatedAt    DateTime  @updatedAt
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+// 原価明細行
+model CostItem {
+  id        Int      @id @default(autoincrement())
+  projectId String
+  category  String // material / process / purchased / outsource / other
+  code      String? // マスタ参照コード（手入力行は null）
+  name      String
+  quantity  Float    @default(1)
+  unit      String? // kg / 分 / 回 / 個 など
+  unitPrice Float    @default(0)
+  amount    Float    @default(0) // 通常は quantity * unitPrice、手動上書き可
+  source    String   @default("auto") // auto / manual
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+// 原価の手動修正履歴
+model CostAdjustmentLog {
+  id          Int      @id @default(autoincrement())
+  projectId   String
+  itemName    String // 対象明細名
+  field       String // amount / unitPrice / quantity など
+  beforeValue String
+  afterValue  String
+  reason      String
+  editedBy    String
+  createdAt   DateTime @default(now())
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+// 粗利提案（AI・ルールベースの推奨値）
+model MarginProposal {
+  id             Int      @id @default(autoincrement())
+  projectId      String   @unique
+  baseRate       Float    @default(25) // 基準粗利率 %
+  smallLot       Float    @default(0) // 小ロット加算
+  shortDelivery  Float    @default(0) // 短納期加算
+  specialProcess Float    @default(0) // 特殊加工加算
+  difficulty     Float    @default(0) // 難易度加算
+  risk           Float    @default(0) // リスク加算
+  customerAdj    Float    @default(0) // 顧客別調整
+  salesAdj       Float    @default(0) // 営業調整
+  otherAdj       Float    @default(0) // その他調整
+  otherReason    String? // その他調整の内容
+  updatedAt      DateTime @updatedAt
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+// 経験値データ: AI推奨値と担当者の最終決定の差分・理由
+model PriceDecision {
+  id         Int      @id @default(autoincrement())
+  projectId  String
+  aiRate     Float // AI推奨粗利率 %
+  aiPrice    Float // AI推奨価格
+  finalRate  Float // 最終決定粗利率 %
+  finalPrice Float // 最終見積価格
+  rateDiff   Float // finalRate - aiRate
+  priceDiff  Float // finalPrice - aiPrice
+  reason     String // 変更理由
+  decidedBy  String // 決定担当者
+  decidedAt  DateTime @default(now())
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+// 受注/失注の結果
+model OrderResult {
+  id         Int      @id @default(autoincrement())
+  projectId  String   @unique
+  result     String // 受注 / 失注
+  orderPrice Float? // 最終受注価格
+  note       String?
+  decidedAt  DateTime @default(now())
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+// ============ マスタ ============
+
+model MaterialMaster {
+  id           Int      @id @default(autoincrement())
+  code         String   @unique // 材料コード 例: SUS304-3
+  name         String // 材料名
+  materialType String // 材質 例: SUS304
+  spec         String? // 規格 例: 3mm
+  unitPrice    Float // 単価
+  unit         String // 単位 例: kg
+  updatedAt    DateTime @updatedAt
+  createdAt    DateTime @default(now())
+}
+
+model ProcessMaster {
+  id         Int      @id @default(autoincrement())
+  code       String   @unique // 加工コード 例: LASER
+  name       String // 加工名
+  unitPrice  Float // 単価
+  chargeUnit String // 課金単位 例: 分 / 回
+  updatedAt  DateTime @updatedAt
+  createdAt  DateTime @default(now())
+}
+
+model OutsourceMaster {
+  id          Int      @id @default(autoincrement())
+  processName String // 外注工程名
+  supplier    String // 外注先
+  basePrice   Float // 基準単価
+  notes       String? // 備考
+  updatedAt   DateTime @updatedAt
+  createdAt   DateTime @default(now())
+}
+
+model PurchasedPartMaster {
+  id        Int      @id @default(autoincrement())
+  code      String   @unique // 部品コード
+  name      String // 部品名
+  unitPrice Float // 仕入単価
+  supplier  String? // 仕入先
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+}
