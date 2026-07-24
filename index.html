@@ -127,16 +127,26 @@
   .hero-bg.s1{background-image:url('img/hero-slide1.jpg')}
   .hero-bg.s2{background-image:url('img/hero-slide2.jpg')}
   @keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.12)}}
-  .hero h1{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;font-size:38px;line-height:1.5;letter-spacing:.04em;color:var(--ink);font-weight:600;margin-bottom:18px}
+  .hero h1{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;font-size:38px;line-height:1.5;letter-spacing:.04em;color:var(--ink);font-weight:600;margin-bottom:14px}
   .hero h1 .accent{color:var(--gold)}
-  .hero-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+  .hero h1 .nw{white-space:nowrap}
+  .hero-tasks{display:flex;flex-wrap:wrap;gap:5px 16px;list-style:none;margin:0 0 14px;max-width:490px}
+  .hero-tasks li{position:relative;font-size:13.5px;color:var(--ink-soft);letter-spacing:.03em;line-height:1.7;white-space:nowrap;padding-left:13px}
+  .hero-tasks li::before{content:"";position:absolute;left:0;top:.66em;width:5px;height:5px;border-radius:50%;background:var(--sage-2)}
+  .hero .sub b{font-weight:600;color:var(--ink)}
+  .hero .sub-value{margin-top:8px;color:var(--sage-ink)}
+  .hero-brand{margin-top:18px}
+  .hero-brand .bq{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;font-size:19px;font-weight:600;letter-spacing:.04em;line-height:1.75;color:var(--ink)}
+  .hero-brand .bq span{background-image:linear-gradient(transparent 64%,rgba(217,190,126,.42) 64%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+  .hero-brand .bs{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;font-size:13px;font-weight:600;letter-spacing:.08em;color:var(--sage-ink);margin-top:4px}
+  .hero-cta{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
   .hero-cta .btn,.hero-cta .btn-outline{padding-left:24px;padding-right:18px;font-size:14px;gap:9px}
   .hero-cta a .circ{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
     border-radius:50%;border:1px solid currentColor;font-size:11px;line-height:1}
   .btn-outline{display:inline-flex;align-items:center;background:#fff;color:var(--sage-ink);text-decoration:none;
     padding:17px 34px;border-radius:5px;font-size:14.5px;letter-spacing:.06em;border:1px solid var(--sage);transition:.2s;box-shadow:0 3px 12px rgba(74,70,63,.08)}
   .btn-outline:hover{background:var(--sage);color:#fff}
-  .hero .sub{margin-top:0;font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;font-size:15px;line-height:1.95;color:var(--ink);font-weight:500;max-width:490px}
+  .hero .sub{margin-top:0;font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;font-size:14.5px;line-height:1.9;color:var(--ink);font-weight:500;max-width:490px}
   /* 横流れマーキー */
   .hero-marquee{margin-top:46px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:15px 0;overflow:hidden;white-space:nowrap;background:var(--ivory-2)}
   .hero-marquee-inner{display:inline-block;animation:heroMarquee 34s linear infinite;will-change:transform}
@@ -416,7 +426,8 @@
   /* ── ヒーローのキーワード見出し(案2:アンダーライン強調・大きめ) ── */
   .hero-kw{margin-bottom:12px}
   .hero-kw .t{display:inline-block;font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;
-    font-size:17px;font-weight:600;letter-spacing:.08em;line-height:1.5;color:var(--sage-ink)}
+    font-size:15px;font-weight:600;letter-spacing:.1em;line-height:1.6;color:var(--sage-ink)}
+  .hero-kw .x{color:var(--gold);font-size:.82em;margin:0 7px;vertical-align:1px}
   .hero-kw .u{position:relative;white-space:nowrap;color:var(--ink)}
   .hero-kw .u::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:2px;background:var(--gold)}
 
@@ -563,7 +574,7 @@
   .hero h1 .l2{display:block;font-weight:700;letter-spacing:.03em}
   .hero h1 .em{color:var(--olive)}
   .hero h1 .em2{color:var(--gold)}
-  .hero .sub-lead{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;font-size:13px;color:var(--sage-ink);font-weight:600;letter-spacing:.06em;margin-top:18px;line-height:1.8}
+  .hero .sub-lead{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;font-size:13px;color:var(--sage-ink);font-weight:600;letter-spacing:.06em;margin-top:14px;line-height:1.8}
   /* プロフィール強調語の手描き風下線(まっすぐ寄り) */
   .profile .pbio b, .pquote b{
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='6' preserveAspectRatio='none'%3E%3Cpath d='M1 3.9 C 60 3.5, 120 4.2, 199 3.7' fill='none' stroke='%236f7d61' stroke-width='1.6' stroke-linecap='round' stroke-opacity='0.6'/%3E%3C/svg%3E");
@@ -649,10 +660,21 @@
     .worry-grid,.found-head{grid-template-columns:1fr}
     .nav a:not(.ncta){display:none}
     .hero-copy{padding:22px 22px 24px;border-radius:14px}
-    .hero h1{font-size:24px;line-height:1.55;letter-spacing:.03em}
-    .hero-kw .t{font-size:15px}
-    .hero .sub{font-size:14px}
-    .hero-cta{gap:10px;margin-top:26px}
+    .hero .wrap{padding-top:36px}
+    .hero-grid{grid-template-columns:1fr;gap:30px;min-height:0}
+    .hero-right{justify-content:center;padding-top:0}
+    .hero-arch{max-width:270px;border-radius:135px 135px 16px 16px}
+    .hero h1{font-size:25px;line-height:1.5;letter-spacing:.03em;margin-bottom:12px}
+    .hero-kw .t{font-size:13px;letter-spacing:.08em}
+    .hero-kw .x{margin:0 5px}
+    .hero-tasks{gap:4px 12px;margin-bottom:12px}
+    .hero-tasks li{font-size:12.5px;padding-left:11px}
+    .hero .sub{font-size:13.5px;line-height:1.85}
+    .hero-brand{margin-top:14px}
+    .hero-brand .bq{font-size:16.5px;line-height:1.7}
+    .hero-brand .bs{font-size:12px}
+    .hero .sub-lead{font-size:12px;margin-top:12px}
+    .hero-cta{gap:10px;margin-top:20px}
     .btn-outline,.hero-cta .btn{padding:14px 24px;font-size:13.5px}
     /* ② 成長基盤の見出しを携帯で2行に収める */
     .grow{padding:26px 24px}
@@ -715,13 +737,22 @@
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-left">
-        <div class="hero-kw"><span class="t">社員数名〜30名規模の会社へ</span></div>
-        <h1 class="serif">
-          <span class="l1">代行じゃない、</span>
-          <span class="l2"><span class="em2">内製化</span>します。</span>
-        </h1>
-        <p class="sub">採用・総務・社内運用を、属人化から仕組み化へ。<br>Grace Rinは、成長企業のコーポレート領域を整える内製化ディレクションです。</p>
-        <p class="sub-lead">作業者ではなく、伴走者として入ります。</p>
+        <div class="hero-kw"><span class="t">総務<span class="x">×</span>経理<span class="x">×</span>人事<span class="x">×</span>秘書<span class="x">×</span>AI</span></div>
+        <h1 class="serif">会社を<span class="em">整える</span>、<span class="nw">Grace&nbsp;Rin。</span></h1>
+        <ul class="hero-tasks">
+          <li>人を採用する。</li>
+          <li>経費を処理する。</li>
+          <li>社内ルールをつくる。</li>
+          <li>業務を効率化する。</li>
+          <li>AIを導入する。</li>
+        </ul>
+        <p class="sub"><b>「誰に頼めばいいかわからない」を、<br>まとめて整理します。</b></p>
+        <p class="sub sub-value">代行するだけではなく、仕組みにする。<br>そして、社内で回せる状態へ。</p>
+        <div class="hero-brand">
+          <p class="bq"><span>「もっと早く頼めばよかった。」</span></p>
+          <p class="bs">そう言ってもらえる仕事を。</p>
+        </div>
+        <p class="sub-lead">代行じゃない。内製化という選択を。</p>
         <div class="hero-cta">
           <a class="btn btn-main" href="#contact">30分で、手放せる業務を相談する<span class="circ">→</span></a>
           <a class="btn-outline" href="#service">サービスを見る<span class="circ">→</span></a>
